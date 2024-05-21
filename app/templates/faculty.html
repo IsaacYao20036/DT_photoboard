@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<p>FACULTY</p>
+
+{{ faculty }}
+<br>
+{{ faculty.hof }}
+{% for department in faculty.departments %}
+    <br>
+    {{ department }}
+{% endfor %}
+
+{% endblock %}
