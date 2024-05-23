@@ -3,7 +3,11 @@
 
 <p>Department</p>
 {{ department }}
-<br>
-{{ department.faculty }}
+<p>HOD: {{ department.hod }}</p>
+Staff Members:
+{% for staffmember in department.staffmembers %}
+    <br>
+    {{ staffmember }}
+{% endfor %}
 
 {% endblock %}

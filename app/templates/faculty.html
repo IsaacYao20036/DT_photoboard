@@ -4,8 +4,8 @@
 <p>FACULTY</p>
 
 {{ faculty }}
-<br>
-{{ faculty.hof }}
+<p>HOF: {{ faculty.hof }}</p>
+Departments:
 {% for department in faculty.departments %}
     <br>
     {{ department }}
