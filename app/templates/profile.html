@@ -1,15 +1,31 @@
 {% extends 'layout.html' %}
 {% block content %}
 
+{% set duplicate_check = [] %}
+
 <p>Profile</p>
 {{ staffmember }}
 <br>
-{{ staffmember.code }}
+Code: {{ staffmember.code }}
 <br>
-{{ staffmember.division }}
+Division: {{ staffmember.division }}
 <br>
-{{ staffmember.email }}
+Email: {{ staffmember.email }}
 <br>
-{{ staffmember.likely_location }}
+Likely location: {{ staffmember.likely_location }}
+<br>
+Faculty:
+{% for department in staffmember.departments %}
+    {% if duplicate_check[0] != department.faculty %}
+        {{ department.faculty }}
+    {% endif %}
+    {% if duplicate_check.append(department.faculty) %}
+    {% endif %}
+{% endfor %}
+<br>
+Department:
+{% for department in staffmember.departments %}
+        {{ department }}
+{% endfor %}
 
 {% endblock %}
