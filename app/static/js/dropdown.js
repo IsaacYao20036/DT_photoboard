@@ -1,3 +1,6 @@
+// Code from W3Schools: https://www.w3schools.com/howto/howto_js_dropdown.asp
+
+
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 function myFunction() {
