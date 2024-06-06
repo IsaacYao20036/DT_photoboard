@@ -3,11 +3,11 @@
 
 <p>Department</p>
 {{ department }}
-<p>HOD: {{ department.hod }}</p>
+<p>HOD: <a href="/profile/{{ department.hod.code }}">{{ department.hod }}</a></p>
 Staff Members:
 {% for staffmember in department.staffmembers %}
     <br>
-    {{ staffmember }}
+    <a href="/profile/{{ staffmember.code }}">{{ staffmember }}</a>
 {% endfor %}
 
 {% endblock %}

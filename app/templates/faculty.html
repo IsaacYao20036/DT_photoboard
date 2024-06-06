@@ -4,11 +4,11 @@
 <p>FACULTY</p>
 
 {{ faculty }}
-<p>HOF: {{ faculty.hof }}</p>
+<p>HOF: <a href="/profile/{{ faculty.hof.code }}">{{ faculty.hof }}</a></p>
 Departments:
 {% for department in faculty.departments %}
     <br>
-    {{ department }}
+    <a href="/department/{{ department.id }}">{{ department }}</a>
 {% endfor %}
 
 {% endblock %}
