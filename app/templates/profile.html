@@ -17,7 +17,7 @@ Likely location: {{ staffmember.likely_location }}
 Faculty:
 {% for department in staffmember.departments %}
     {% if duplicate_check[0] != department.faculty %}
-        {{ department.faculty }}
+        {{ department.faculty }},
     {% endif %}
     {% if duplicate_check.append(department.faculty) %}
     {% endif %}
@@ -25,7 +25,12 @@ Faculty:
 <br>
 Department:
 {% for department in staffmember.departments %}
-        {{ department }}
+    {{ department }},
+{% endfor %}
+<br>
+Positions/Roles:
+{% for position in staffmember.positions%}
+    {{ position }},
 {% endfor %}
 
 {% endblock %}

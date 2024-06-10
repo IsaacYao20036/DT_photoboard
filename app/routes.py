@@ -7,9 +7,10 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 db = SQLAlchemy()
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'photoboard.db')
 db.init_app(app)
+app.secret_key = 'correcthorsebatterystaple'
 
 import app.models as models
-
+# from app.forms import Select_Movie, Add_Movie 
 
 @app.route('/')
 def home():

@@ -37,7 +37,10 @@ class Position(db.Model):
      __tablename__ = "Position"
      id = db.Column(db.Integer, primary_key=True)
      name = db.Column(db.Text())
-     staff_member_id = db.Column(db.Integer, db.ForeignKey('StaffMember.code'))
+     staff_member_code = db.Column(db.Integer, db.ForeignKey('StaffMember.code'))
+
+     def __repr__(self):
+        return self.name
 
 
 class Faculty(db.Model):
