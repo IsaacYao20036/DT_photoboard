@@ -43,8 +43,8 @@ def search():
         if form.validate_on_submit():
             # print("YAY! - got {}, of type {}".format(form.moviename.data, type(form.moviename.data)))
             # print("Redirecting to: {}".format(url_for('details', ref=form.moviename.data)))
-            profile = models.StaffMember.query.filter_by(code=form.staffmember.data).first()
-            return redirect(url_for('profile', code=profile.code))
+            # profile = models.StaffMember.query.filter_by(code=form.staffmember.data).first
+            return redirect(url_for('staffmember', code=form.staffmember.data))
   
     # else:
     #     # print('bugger: {}'.format(form.moviename.data))
