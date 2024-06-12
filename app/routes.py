@@ -1,5 +1,5 @@
 from app import app
-from flask import render_template, abort
+from flask import render_template, abort, redirect, request, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
 import os
 
@@ -10,7 +10,7 @@ db.init_app(app)
 app.secret_key = 'correcthorsebatterystaple'
 
 import app.models as models
-# from app.forms import Select_Movie, Add_Movie 
+from app.forms import Select_Movie
 
 @app.route('/')
 def home():
@@ -34,9 +34,22 @@ def staffmember(code):
     return render_template('profile.html', staffmember=staffmember)
 
 
-@app.route('/search')
+@app.route('/search', methods=['GET', 'POST'])
 def search():
-    return render_template('search.html')
+    form = Select_Movie()
+    movienames = models.Movie.query.all()
+    form.moviename.choices = [(movie.id, movie.title) for movie in movienames]
+    if request.method=='POST':
+        if form.validate_on_submit():
+            print("YAY! - got {}, of type {}".format(form.moviename.data, type(form.moviename.data)))
+            print("Redirecting to: {}".format(url_for('details', ref=form.moviename.data)))
+            return redirect(url_for('details', ref=form.moviename.data))
+  
+    else:
+        print('bugger: {}'.format(form.moviename.data))
+        flash("Thats a bad movie, you can't see its details")
+        return redirect('/')
+    return render_template('search.html', title='select a movie', form=form)
 
 
 if __name__ == '__main__':
