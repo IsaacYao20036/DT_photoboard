@@ -19,5 +19,5 @@ import app.models
   
 
 class Select_Movie(FlaskForm):
-  moviename = SelectField('moviename', validators=[DataRequired()], coerce=int)
+  staffmember = SelectField('staffmember', validators=[DataRequired()], coerce=str)
 

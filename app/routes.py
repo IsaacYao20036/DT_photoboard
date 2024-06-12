@@ -37,19 +37,20 @@ def staffmember(code):
 @app.route('/search', methods=['GET', 'POST'])
 def search():
     form = Select_Movie()
-    movienames = models.Movie.query.all()
-    form.moviename.choices = [(movie.id, movie.title) for movie in movienames]
+    staffmember = models.StaffMember.query.all()
+    form.staffmember.choices = [(staff.code, staff.name) for staff in staffmember]
     if request.method=='POST':
         if form.validate_on_submit():
-            print("YAY! - got {}, of type {}".format(form.moviename.data, type(form.moviename.data)))
-            print("Redirecting to: {}".format(url_for('details', ref=form.moviename.data)))
-            return redirect(url_for('details', ref=form.moviename.data))
+            # print("YAY! - got {}, of type {}".format(form.moviename.data, type(form.moviename.data)))
+            # print("Redirecting to: {}".format(url_for('details', ref=form.moviename.data)))
+            profile = models.StaffMember.query.filter_by(code=form.staffmember.data).first()
+            return redirect(url_for('profile', code=profile.code))
   
-    else:
-        print('bugger: {}'.format(form.moviename.data))
-        flash("Thats a bad movie, you can't see its details")
-        return redirect('/')
-    return render_template('search.html', title='select a movie', form=form)
+    # else:
+    #     # print('bugger: {}'.format(form.moviename.data))
+    #     # flash("Thats a bad movie, you can't see its details")
+    #     return redirect('/')
+    return render_template('search.html', form=form)
 
 
 if __name__ == '__main__':
