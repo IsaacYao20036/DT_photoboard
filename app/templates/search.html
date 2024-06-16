@@ -4,21 +4,74 @@
 <p>Search Directory</p>
 
 <!-- Learning how to use WTForms -->
- <!-- This form will likely be removed or reworked -->
-<form method="POST" enctype="multipart/form-data">
+<!-- This form will likely be removed or reworked -->
+<!-- <form method="POST" enctype="multipart/form-data">
     {{ form.csrf_token }}
     {{ form.staffmembers }}<br>{{ form.errors }}
     <input type="submit" value="Go to profile">
-</form>    
+</form> -->
 
 <br>
 
-{% for staffmember in staffmembers %}
-    <a href="/profile/{{ staffmember.code }}">
-        {{ staffmember }}
-        {{ staffmember.code }}
-    </a>
-    <br>
-{% endfor %}
+<!-- Trying dropdown -->
+<!-- <form>
+    <label for="label">Sort by:</label>
+    <select name="sort">
+        <option value="First name">First name</option>
+        <option value="Last name">Last name</option>
+        <option value="Faculty">Faculty</option>
+        <option value="Department">Department</option>
+    </select>
+    <input type="submit" id="myInput" onclick="myFunction()" value="foo">
+</form> -->
+
+<br>
+
+<p>Click the button to sort the list alphabetically:</p>
+<button onclick="sortList()">Sort</button>
+<ul id="id01">
+    {% for staffmember in staffmembers %}
+        <li>
+            <a href="/profile/{{ staffmember.code }}">
+                <p class="profileLinksText">{{ staffmember }}</p>
+            </a>
+        </li>
+        <br>
+    {% endfor %}
+   <li>
+        <a href="#">
+            <p class="profileLinksText">apple</p>
+        </a>
+    </li>
+</ul>
+
+<!-- <p>Click the button to sort the list alphabetically:</p>
+<button onclick="sortList()">Sort</button>
+<ul id="id01">
+    <li>Oslo</li>
+    <li>Stockholm</li>
+    <li>Helsinki</li>
+    <li>Berlin</li>
+    <li>Rome</li>
+    <li>Madrid</li>
+</ul> -->
+
+<br>
+
+<!-- Search List code from W3Schools -->
+<!-- <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+
+<ul id="myUL">
+    {% for staffmember in staffmembers %}
+        <li>
+            <a href="/profile/{{ staffmember.code }}">
+                {{ staffmember }}
+            </a>
+        </li>
+    {% endfor %}
+    <li><a>apple</a></li>
+</ul> -->
+
+<script src="{{url_for('static', filename='/js/search.js')}}"></script>  
 
 {% endblock %}
