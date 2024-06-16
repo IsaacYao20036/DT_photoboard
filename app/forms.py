@@ -15,9 +15,7 @@ import app.models
 #   title = StringField('title', validators=[DataRequired()])
 #   year = IntegerField('year', validators=[Optional(), check_year])
 #   description = TextAreaField('description')
-  
-  
 
-class Select_Movie(FlaskForm):
-  staffmember = SelectField('staffmember', validators=[DataRequired()], coerce=str)
-
+class Select_StaffMember(FlaskForm):
+    staffmembers = SelectField('staffmembers', validators=[DataRequired()],
+                               coerce=str)

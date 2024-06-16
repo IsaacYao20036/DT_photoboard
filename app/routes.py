@@ -5,12 +5,15 @@ import os
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 db = SQLAlchemy()
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'photoboard.db')
+app.config[
+    'SQLALCHEMY_DATABASE_URI'
+    ] = 'sqlite:///' + os.path.join(basedir, 'photoboard.db')
 db.init_app(app)
 app.secret_key = 'correcthorsebatterystaple'
 
 import app.models as models
-from app.forms import Select_Movie
+from app.forms import Select_StaffMember
+
 
 @app.route('/')
 def home():
@@ -21,6 +24,7 @@ def home():
 def faculty(id):
     faculty = models.Faculty.query.filter_by(id=id).first()
     return render_template('faculty.html', faculty=faculty)
+
 
 @app.route('/department/<int:id>')
 def department(id):
@@ -36,21 +40,23 @@ def staffmember(code):
 
 @app.route('/search', methods=['GET', 'POST'])
 def search():
-    form = Select_Movie()
-    staffmember = models.StaffMember.query.all()
-    form.staffmember.choices = [(staff.code, staff.name) for staff in staffmember]
-    if request.method=='POST':
+    form = Select_StaffMember()
+    staffmembers = models.StaffMember.query.all()
+    form.staffmembers.choices = [(staffmember.code, staffmember.name) 
+                                 for staffmember in staffmembers]
+    if request.method == 'POST':
         if form.validate_on_submit():
             # print("YAY! - got {}, of type {}".format(form.moviename.data, type(form.moviename.data)))
             # print("Redirecting to: {}".format(url_for('details', ref=form.moviename.data)))
             # profile = models.StaffMember.query.filter_by(code=form.staffmember.data).first
-            return redirect(url_for('staffmember', code=form.staffmember.data))
-  
+            return redirect(url_for('staffmember',
+                                    code=form.staffmembers.data))
+
     # else:
     #     # print('bugger: {}'.format(form.moviename.data))
     #     # flash("Thats a bad movie, you can't see its details")
     #     return redirect('/')
-    return render_template('search.html', form=form)
+    return render_template('search.html', staffmembers=staffmembers, form=form)
 
 
 if __name__ == '__main__':
