@@ -11,6 +11,8 @@ class StaffMember(db.Model):
     __tablename__ = "StaffMember"
     code = db.Column(db.Text(), primary_key=True)
     name = db.Column(db.Text())
+    fname = db.Column(db.Text())
+    lname = db.Column(db.Text())
     photo = db.Column(db.Text())
     division_id = db.Column(db.Integer, db.ForeignKey('Division.id'))
     email = db.Column(db.Text())
