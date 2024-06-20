@@ -29,21 +29,14 @@
 
 <p>Click the button to sort the list alphabetically:</p>
 <button onclick="sortList()">Sort</button>
-<ul id="id01">
+<div id="id01">
     {% for staffmember in staffmembers %}
-        <li>
             <a href="/profile/{{ staffmember.code }}">
                 <p class="profileLinksText">{{ staffmember }}</p>
             </a>
-        </li>
         <br>
     {% endfor %}
-   <li>
-        <a href="#">
-            <p class="profileLinksText">apple</p>
-        </a>
-    </li>
-</ul>
+</div>
 
 <script src="{{url_for('static', filename='/js/search.js')}}"></script>  
 

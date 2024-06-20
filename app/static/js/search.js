@@ -1,8 +1,8 @@
 // Sort List code from W3Schools
 
 function sortList() {
-    var list, i, switching, b, shouldSwitch;
-    list = document.getElementById("id01");
+    var div, i, switching, b, shouldSwitch;
+    div = document.getElementById("id01");
     switching = true;
     /* Make a loop that will continue until
     no switching has been done: */
@@ -10,7 +10,7 @@ function sortList() {
         // Start by saying: no switching is done:
         switching = false;
         // b = list.getElementsByClassName("profileLinksText");
-        b = list.getElementsByClassName("profileLinksText");
+        b = div.getElementsByClassName("profileLinksText");
         // Loop through all list items:
         for (i = 0; i < (b.length - 1); i++) {
             // Start by saying there should be no switching:
@@ -25,6 +25,9 @@ function sortList() {
                 break;
             }
         }
+
+    // alert(b[i].parentNode)
+
         if (shouldSwitch) {
             /* If a switch has been marked, make the switch
             and mark the switch as done: */
