@@ -1,23 +1,22 @@
 // Sort List code from W3Schools
 
-function sortList() {
-    var div, i, switching, b, shouldSwitch;
-    div = document.getElementById("id01");
+function sortFirstName() {
+    var div, i, switching, p, shouldSwitch;
+    div = document.getElementById("allResults");
     switching = true;
     /* Make a loop that will continue until
     no switching has been done: */
     while (switching) {
         // Start by saying: no switching is done:
         switching = false;
-        // b = list.getElementsByClassName("profileLinksText");
-        b = div.getElementsByClassName("profileLinksText");
+        p = div.getElementsByClassName("profileLinksText");
         // Loop through all list items:
-        for (i = 0; i < (b.length - 1); i++) {
+        for (i = 0; i < (p.length - 1); i++) {
             // Start by saying there should be no switching:
             shouldSwitch = false;
             /* Check if the next item should
             switch place with the current item: */
-            if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
+            if (p[i].innerHTML.toLowerCase() > p[i + 1].innerHTML.toLowerCase()) {
                 /* If next item is alphabetically lower than current item,
                 mark as a switch and break the loop: */
                 shouldSwitch = true;
@@ -25,13 +24,46 @@ function sortList() {
                 break;
             }
         }
-
-    // alert(b[i].parentNode)
-
         if (shouldSwitch) {
             /* If a switch has been marked, make the switch
             and mark the switch as done: */
-            b[i].parentNode.insertBefore(b[i + 1], b[i]);
+            p[i].parentNode.parentNode.insertBefore(p[i + 1].parentNode, p[i].parentNode);
+            switching = true;
+        }
+    }
+}
+
+
+function sortLastName() {
+    var div, i, switching, p, shouldSwitch;
+    div = document.getElementById("allResults");
+    switching = true;
+    /* Make a loop that will continue until
+    no switching has been done: */
+    while (switching) {
+        // Start by saying: no switching is done:
+        switching = false;
+        p = div.getElementsByTagName("p").className;
+        console.log(p)
+        // o_O     :>     B)     \o/     (^-.-^)     (._. )     (*˘︶˘*)     ❀◕ ‿ ◕❀     (◍•ᴗ•◍)❤     ₍՞◌′ᵕ‵ू◌₎♡     (๑꒪▿꒪)*     ⁄(⁄ ⁄•⁄-⁄•⁄ ⁄)⁄      :P    D:
+        // Loop through all list items:
+        for (i = 0; i < (p.length - 1); i++) {
+            // Start by saying there should be no switching:
+            shouldSwitch = false;
+            /* Check if the next item should
+            switch place with the current item: */
+            if (p[i].innerHTML.toLowerCase() > p[i + 1].innerHTML.toLowerCase()) {
+                /* If next item is alphabetically lower than current item,
+                mark as a switch and break the loop: */
+                shouldSwitch = true;
+                
+                break;
+            }
+        }
+        if (shouldSwitch) {
+            /* If a switch has been marked, make the switch
+            and mark the switch as done: */
+            p[i].parentNode.parentNode.insertBefore(p[i + 1].parentNode, p[i].parentNode);
             switching = true;
         }
     }

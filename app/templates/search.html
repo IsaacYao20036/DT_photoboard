@@ -28,11 +28,12 @@
 <br>
 
 <p>Click the button to sort the list alphabetically:</p>
-<button onclick="sortList()">Sort</button>
-<div id="id01">
+<button onclick="sortFirstName()">Sort By First Name</button>
+<button onclick="sortLastName()">Sort By Last Name</button>
+<div id="allResults">
     {% for staffmember in staffmembers %}
             <a href="/profile/{{ staffmember.code }}">
-                <p class="profileLinksText">{{ staffmember }}</p>
+                <p class="profileLinksText test">{{ staffmember }}</p>
             </a>
         <br>
     {% endfor %}
