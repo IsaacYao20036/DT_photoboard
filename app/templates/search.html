@@ -33,7 +33,7 @@
 <div id="allResults">
     {% for staffmember in staffmembers %}
             <a href="/profile/{{ staffmember.code }}">
-                <p class="profileLinksText test">{{ staffmember }}</p>
+                <p class="{{ staffmember.lname }}">{{ staffmember }}</p>
             </a>
         <br>
     {% endfor %}

@@ -9,7 +9,7 @@ function sortFirstName() {
     while (switching) {
         // Start by saying: no switching is done:
         switching = false;
-        p = div.getElementsByClassName("profileLinksText");
+        p = div.getElementsByTagName("p");
         // Loop through all list items:
         for (i = 0; i < (p.length - 1); i++) {
             // Start by saying there should be no switching:
@@ -43,16 +43,15 @@ function sortLastName() {
     while (switching) {
         // Start by saying: no switching is done:
         switching = false;
-        p = div.getElementsByTagName("p").className;
-        console.log(p)
-        // o_O     :>     B)     \o/     (^-.-^)     (._. )     (*˘︶˘*)     ❀◕ ‿ ◕❀     (◍•ᴗ•◍)❤     ₍՞◌′ᵕ‵ू◌₎♡     (๑꒪▿꒪)*     ⁄(⁄ ⁄•⁄-⁄•⁄ ⁄)⁄      :P    D:
+        p = div.getElementsByTagName("p");
+        // o_O     :>     B)     \o/     (^-.-^)     (._. )     (*˘︶˘*)     ❀◕ ‿ ◕❀     (◍•ᴗ•◍)❤     ₍՞◌′ᵕ‵ू◌₎♡     (๑꒪▿꒪)*     ⁄(⁄ ⁄•⁄-⁄•⁄ ⁄)⁄      :P    D:     :?
         // Loop through all list items:
         for (i = 0; i < (p.length - 1); i++) {
             // Start by saying there should be no switching:
             shouldSwitch = false;
             /* Check if the next item should
             switch place with the current item: */
-            if (p[i].innerHTML.toLowerCase() > p[i + 1].innerHTML.toLowerCase()) {
+            if (p[i].className.toLowerCase() > p[i + 1].className.toLowerCase()) {
                 /* If next item is alphabetically lower than current item,
                 mark as a switch and break the loop: */
                 shouldSwitch = true;
