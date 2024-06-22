@@ -11,31 +11,21 @@
     <input type="submit" value="Go to profile">
 </form> -->
 
-<br>
-
 <!-- Trying dropdown -->
-<!-- <form>
-    <label for="label">Sort by:</label>
-    <select name="sort">
-        <option value="First name">First name</option>
-        <option value="Last name">Last name</option>
-        <option value="Faculty">Faculty</option>
-        <option value="Department">Department</option>
-    </select>
-    <input type="submit" id="myInput" onclick="myFunction()" value="foo">
-</form> -->
+
+<p>Choose a filter to sort the results alphabetically:</p>
+<select id="filterSelect">
+    <option value="fname">First name</option>
+    <option value="lname">Last name</option>
+</select>
 
 <br>
 
-<p>Click the button to sort the list alphabetically:</p>
-<button onclick="sortFirstName()">Sort By First Name</button>
-<button onclick="sortLastName()">Sort By Last Name</button>
 <div id="allResults">
     {% for staffmember in staffmembers %}
             <a href="/profile/{{ staffmember.code }}">
                 <p class="{{ staffmember.lname }}">{{ staffmember }}</p>
             </a>
-        <br>
     {% endfor %}
 </div>
 

@@ -1,4 +1,20 @@
-// Sort List code from W3Schools
+sortFirstName()
+
+document.getElementById("filterSelect").onchange = changeListener;
+
+function changeListener(){
+    var value = this.value
+
+    if (value == "fname"){
+        sortFirstName();
+    } else if (value == "lname"){
+        sortLastName();
+    }
+
+}
+
+
+// Sort List code from W3Schools, it has been modified
 
 function sortFirstName() {
     var div, i, switching, p, shouldSwitch;
