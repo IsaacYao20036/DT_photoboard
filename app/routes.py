@@ -17,7 +17,8 @@ from app.forms import Select_StaffMember
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    staffmembers = models.StaffMember.query.all()
+    return render_template('home.html', staffmembers=staffmembers)
 
 
 @app.route('/faculty/<int:id>')

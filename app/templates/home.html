@@ -3,4 +3,35 @@
 
 <p>Hello World!</p>
 
+<!-- Dropdown code from W3Schools: https://www.w3schools.com/howto/howto_js_dropdown.asp -->
+<div class="dropdown">
+    <button onclick="toggleDropdown(principalDropdown)" class="dropbtn">Principal</button>
+    <div id="principalDropdown" class="dropdown-content">
+		{% for staffmember in staffmembers %}
+            {% for position in staffmember.positions %}
+                {% if position.group == "Principal" %}
+                    <a href="/profile/{{ staffmember.code }}">
+                        <p>{{ staffmember }} ({{ position }})</p>
+                    </a>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    </div>
+</div>
+
+<div class="dropdown">
+    <button onclick="toggleDropdown(leadershipTeamDropdown)" class="dropbtn">Leadership Team</button>
+    <div id="leadershipTeamDropdown" class="dropdown-content">
+		{% for staffmember in staffmembers %}
+            {% for position in staffmember.positions %}
+                {% if position.group == "Leadership Team" %}
+                    <a href="/profile/{{ staffmember.code }}">
+                        <p>{{ staffmember }} ({{ position }})</p>
+                    </a>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    </div>
+</div>
+
 {% endblock %}

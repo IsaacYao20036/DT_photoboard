@@ -44,6 +44,7 @@ class Position(db.Model):
     name = db.Column(db.Text())
     staff_member_code = db.Column(db.Integer,
                                   db.ForeignKey('StaffMember.code'))
+    group = db.Column(db.Text())
 
     def __repr__(self):
         return self.name
