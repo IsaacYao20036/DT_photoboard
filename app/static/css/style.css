@@ -44,3 +44,10 @@ background-color: #2980B9;
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
+
+
+/* Image styling */
+img {
+    width: 200px;
+    border: 5px solid black;
+}

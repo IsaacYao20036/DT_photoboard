@@ -3,7 +3,12 @@
 
 {% set duplicate_check = [] %}
 
+<button type="button" onclick="history.back()">←Back</button>
+
 <p>Profile</p>
+
+<img src="{{ staffmember.photo }}">
+<br>
 {{ staffmember }}
 <br>
 Code: {{ staffmember.code }}
