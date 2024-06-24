@@ -64,4 +64,12 @@
     </div>
 </div>
 
+<h2>All School Staff</h2>
+<div>
+    {% for staffmember in staffmembers %}
+            <a href="/profile/{{ staffmember.code }}">
+                <p class="{{ staffmember.lname }}">{{ staffmember }}</p>
+            </a>
+    {% endfor %}
+</div>
 {% endblock %}
