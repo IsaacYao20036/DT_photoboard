@@ -13,6 +13,12 @@ function toggleDropdown(dropdownID) {
     else if (dropdownID == leadershipTeamDropdown) {
         document.getElementById("leadershipTeamDropdown").classList.toggle("show")
     }
+    else if (dropdownID == deansDropdown) {
+        document.getElementById("deansDropdown").classList.toggle("show")
+    }
+    else if (dropdownID == counsellorsDropdown) {
+        document.getElementById("counsellorsDropdown").classList.toggle("show")
+    }
 
 }
 

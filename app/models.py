@@ -1,5 +1,11 @@
 from app.routes import db
 
+Staff_Position = db.Table(
+    'Staff_Position',
+    db.Column('scode', db.Text(), db.ForeignKey('StaffMember.code')),
+    db.Column('pid', db.Integer, db.ForeignKey('Position.id'))
+)
+
 Staff_Department = db.Table(
     'Staff_Department',
     db.Column('scode', db.Text(), db.ForeignKey('StaffMember.code')),
@@ -20,6 +26,9 @@ class StaffMember(db.Model):
     positions = db.relationship('Position', backref='staff_member')
     hofs = db.relationship('Faculty', backref='hof')
     hods = db.relationship('Department', backref='hod')
+    positions = db.relationship('Position',
+                                secondary=Staff_Position,
+                                back_populates='staffmembers')
     departments = db.relationship('Department',
                                   secondary=Staff_Department,
                                   back_populates='staffmembers')
@@ -42,9 +51,10 @@ class Position(db.Model):
     __tablename__ = "Position"
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.Text())
-    staff_member_code = db.Column(db.Integer,
-                                  db.ForeignKey('StaffMember.code'))
     group = db.Column(db.Text())
+    staffmembers = db.relationship('StaffMember',
+                                   secondary=Staff_Position,
+                                   back_populates='positions')
 
     def __repr__(self):
         return self.name
