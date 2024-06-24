@@ -51,3 +51,8 @@ img {
     width: 200px;
     border: 5px solid black;
 }
+
+/* Profile card styling */
+.profileCard {
+    border: 1px solid black
+}

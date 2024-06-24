@@ -43,7 +43,8 @@ function sortFirstName() {
         if (shouldSwitch) {
             /* If a switch has been marked, make the switch
             and mark the switch as done: */
-            p[i].parentNode.parentNode.insertBefore(p[i + 1].parentNode, p[i].parentNode);
+            // p[i].parentNode.parentNode.insertBefore(p[i + 1].parentNode, p[i].parentNode);
+            div.insertBefore(p[i + 1].parentNode.parentNode, p[i].parentNode.parentNode);
             switching = true;
         }
     }
@@ -78,7 +79,7 @@ function sortLastName() {
         if (shouldSwitch) {
             /* If a switch has been marked, make the switch
             and mark the switch as done: */
-            p[i].parentNode.parentNode.insertBefore(p[i + 1].parentNode, p[i].parentNode);
+            div.insertBefore(p[i + 1].parentNode.parentNode, p[i].parentNode.parentNode);
             switching = true;
         }
     }

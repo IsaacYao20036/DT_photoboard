@@ -11,7 +11,6 @@
     <input type="submit" value="Go to profile">
 </form> -->
 
-<!-- Trying dropdown -->
 
 <p>Choose a filter to sort the results alphabetically:</p>
 <select id="filterSelect">
@@ -23,9 +22,12 @@
 
 <div id="allResults">
     {% for staffmember in staffmembers %}
+        <div class="profileCard">
             <a href="/profile/{{ staffmember.code }}">
+                <img src="{{ staffmember.photo }}">
                 <p class="{{ staffmember.lname }}">{{ staffmember }}</p>
             </a>
+        </div>
     {% endfor %}
 </div>
 
