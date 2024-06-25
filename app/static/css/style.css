@@ -52,7 +52,15 @@ img {
     border: 5px solid black;
 }
 
+/* CSS Grid */
+#allCards {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    /* padding: 10px; */
+}
+
 /* Profile card styling */
 .profileCard {
+    width: fit-content;
     border: 1px solid black
 }

@@ -18,7 +18,7 @@ function changeListener(){
 
 function sortFirstName() {
     var div, i, switching, p, shouldSwitch;
-    div = document.getElementById("allResults");
+    div = document.getElementById("allCards");
     switching = true;
     /* Make a loop that will continue until
     no switching has been done: */
@@ -53,7 +53,7 @@ function sortFirstName() {
 
 function sortLastName() {
     var div, i, switching, p, shouldSwitch;
-    div = document.getElementById("allResults");
+    div = document.getElementById("allCards");
     switching = true;
     /* Make a loop that will continue until
     no switching has been done: */
