@@ -83,4 +83,8 @@ function sortLastName() {
             switching = true;
         }
     }
+
+    for (i = 0; i < (p.length); i++) {
+        console.log(p[i].className.charAt(0))
+    }
 }
