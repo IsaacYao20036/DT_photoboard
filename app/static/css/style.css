@@ -53,7 +53,7 @@ img {
 }
 
 /* CSS Grid */
-#allCards {
+.allCards {
     display: grid;
     grid-template-columns: auto auto auto auto;
 }

@@ -39,25 +39,26 @@ def staffmember(code):
     return render_template('profile.html', staffmember=staffmember)
 
 
-@app.route('/search', methods=['GET', 'POST'])
+@app.route('/search')
 def search():
-    form = Select_StaffMember()
-    staffmembers = models.StaffMember.query.all()
-    form.staffmembers.choices = [(staffmember.code, staffmember.name) 
-                                 for staffmember in staffmembers]
-    if request.method == 'POST':
-        if form.validate_on_submit():
-            # print("YAY! - got {}, of type {}".format(form.moviename.data, type(form.moviename.data)))
-            # print("Redirecting to: {}".format(url_for('details', ref=form.moviename.data)))
-            # profile = models.StaffMember.query.filter_by(code=form.staffmember.data).first
-            return redirect(url_for('staffmember',
-                                    code=form.staffmembers.data))
+    # form = Select_StaffMember()
+    staffmembers_f = models.StaffMember.query.order_by(models.StaffMember.name).all()
+    staffmembers_l = models.StaffMember.query.order_by(models.StaffMember.lname).all()
+    # form.staffmembers.choices = [(staffmember.code, staffmember.name) 
+    #                               for staffmember in staffmembers]
+    # if request.method == 'POST':
+    #     if form.validate_on_submit():
+    #         print("YAY! - got {}, of type {}".format(form.moviename.data, type(form.moviename.data)))
+    #         print("Redirecting to: {}".format(url_for('details', ref=form.moviename.data)))
+    #         profile = models.StaffMember.query.filter_by(code=form.staffmember.data).first
+    #         return redirect(url_for('staffmember',
+    #                                 code=form.staffmembers.data))
 
     # else:
     #     # print('bugger: {}'.format(form.moviename.data))
     #     # flash("Thats a bad movie, you can't see its details")
     #     return redirect('/')
-    return render_template('search.html', staffmembers=staffmembers, form=form)
+    return render_template('search.html', staffmembers_f=staffmembers_f,  staffmembers_l=staffmembers_l)
 
 
 if __name__ == '__main__':

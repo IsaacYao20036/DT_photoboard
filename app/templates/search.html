@@ -6,8 +6,8 @@
 <!-- Learning how to use WTForms -->
 <!-- This form will likely be removed or reworked -->
 <!-- <form method="POST" enctype="multipart/form-data">
-    {{ form.csrf_token }}
-    {{ form.staffmembers }}<br>{{ form.errors }}
+    {# {{ form.csrf_token }} #}
+    {# {{ form.staffmembers }}<br>{{ form.errors }} #}
     <input type="submit" value="Go to profile">
 </form> -->
 
@@ -19,20 +19,30 @@
 </select>
 
 <br>
-<br>
-
-<button type="button" onclick="myFunction()">Test</button>
 
 <div id="divA">
     <h2>A</h2>
 </div>
 
-<div id="allCards">
-    {% for staffmember in staffmembers %}
+<div id="fnameSorted" class="allCards">
+    {% for staffmember in staffmembers_f %}
         <div class="profileCard">
             <a href="/profile/{{ staffmember.code }}">
                 <img src="{{ staffmember.photo }}">
-                <p class="{{ staffmember.lname }}">{{ staffmember }}</p>
+                <p>{{ staffmember }}</p>
+            </a>
+        </div>
+    {% endfor %}
+</div>
+
+<h2>ajafjklaefaef</h2>
+
+<div id="lnameSorted" class="allCards">
+    {% for staffmember in staffmembers_l %}
+        <div class="profileCard">
+            <a href="/profile/{{ staffmember.code }}">
+                <img src="{{ staffmember.photo }}">
+                <p>{{ staffmember }}</p>
             </a>
         </div>
     {% endfor %}
