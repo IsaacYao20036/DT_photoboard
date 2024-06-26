@@ -52,7 +52,7 @@ function sortFirstName() {
 
 
 function sortLastName() {
-    var div, i, switching, p, shouldSwitch;
+    var div, i, switching, p, shouldSwitch, firstLetter, divA;
     div = document.getElementById("allCards");
     switching = true;
     /* Make a loop that will continue until
@@ -84,7 +84,54 @@ function sortLastName() {
         }
     }
 
-    for (i = 0; i < (p.length); i++) {
-        console.log(p[i].className.charAt(0))
+    // divA = document.getElementById("divA")
+    // for (i = 0; i < (p.length); i++) {
+    //     firstLetter = p[i].className.charAt(0)
+    //     p[i].classList.add(firstLetter)
+    //     if (p[i].classList[1] == "A") {
+    //         divA.appendChild(p[i].parentNode)
+    //         console.log(p[i].className)
+    //     }
+    // }
+}
+
+
+function myFunction() {
+
+    var div, i, switching, p, shouldSwitch;
+    div = document.getElementById("allCards");
+    switching = true;
+    /* Make a loop that will continue until
+    no switching has been done: */
+    while (switching) {
+        // Start by saying: no switching is done:
+        switching = false;
+        p = div.getElementsByTagName("p");
+        // Loop through all list items:
+        for (i = 0; i < (p.length-1); i++) {
+            // Start by saying there should be no switching:
+            shouldSwitch = false;
+
+            firstLetter = p[i].className.charAt(0)
+            p[i].classList.add(firstLetter) 
+            // console.log(p[i].className)
+
+            /* Check if the next item should
+            switch place with the current item: */
+            if (p[i].classList[1] > p[i + 1].classList[1]) {
+                /* If next item is alphabetically lower than current item,
+                mark as a switch and break the loop: */
+                console.log(p[i].classList[1])
+                shouldSwitch = true;
+                
+                break;
+            }
+        }
+        if (shouldSwitch) {
+            /* If a switch has been marked, make the switch
+            and mark the switch as done: */
+            div.insertBefore(p[i + 1].parentNode.parentNode, p[i].parentNode.parentNode);
+            switching = true;
+        }
     }
 }

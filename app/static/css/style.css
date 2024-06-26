@@ -56,7 +56,6 @@ img {
 #allCards {
     display: grid;
     grid-template-columns: auto auto auto auto;
-    /* padding: 10px; */
 }
 
 /* Profile card styling */
