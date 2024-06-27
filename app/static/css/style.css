@@ -58,6 +58,10 @@ img {
     grid-template-columns: auto auto auto auto;
 }
 
+#lnameSorted {
+    display: none;
+}
+
 /* Profile card styling */
 .profileCard {
     width: fit-content;
