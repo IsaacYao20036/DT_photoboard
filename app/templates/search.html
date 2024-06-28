@@ -21,7 +21,18 @@
 <br>
 <br>
 
+{% set div_list = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O", "P", "Q","R","S","T","U","V","W","X","Y","Z"] %}
+{% for i in range(div_list|length) %}
+
+<h2>{{ div_list[i] }}</h2>
+<div id="div{{ div_list[i] }}" class="alphabetDivs"></div>
+{% endfor %}
+<!-- <div id="divA"><h2>A</h2></div> -->
+
+<h2>asdfadsf</h2>
+
 <div id="fnameSorted" class="allCards">
+    
     {% for staffmember in staffmembers_f %}
         <div class="profileCard">
             <a href="/profile/{{ staffmember.code }}">
@@ -37,7 +48,7 @@
         <div class="profileCard">
             <a href="/profile/{{ staffmember.code }}">
                 <img src="{{ staffmember.photo }}">
-                <p>{{ staffmember }}</p>
+                <p class="{{ staffmember.lname }}">{{ staffmember }}</p>
             </a>
         </div>
     {% endfor %}

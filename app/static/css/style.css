@@ -58,6 +58,11 @@ img {
     grid-template-columns: auto auto auto auto;
 }
 
+.alphabetDivs {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+
 #lnameSorted {
     display: none;
 }
