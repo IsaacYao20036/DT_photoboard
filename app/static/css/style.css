@@ -53,18 +53,13 @@ img {
 }
 
 /* CSS Grid */
-.allCards {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
+#allCards {
+    display: none;
 }
 
-.alphabetDivs {
+.alphabetDiv {
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
-}
-
-#lnameSorted {
-    display: none;
 }
 
 /* Profile card styling */

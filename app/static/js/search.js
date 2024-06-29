@@ -1,35 +1,43 @@
 document.getElementById("filterSelect").onchange = changeListener;
 
 function changeListener() {
-    var value = this.value
+    let value = this.value
 
     if (value == "fname") {
-        document.getElementById("fnameSorted").style.display = "grid";
-        document.getElementById("lnameSorted").style.display = "none";
-        console.log(document.getElementById("lnameSorted").style.display);
+        myFunction(value)
     } else if (value == "lname") {
-        document.getElementById("lnameSorted").style.display = "grid";
-        document.getElementById("fnameSorted").style.display = "none";
-        console.log(document.getElementById("lnameSorted").style.display);
+        myFunction(value)
     }
-
-    myFunction()
 }
 
 
-function myFunction() {
+function myFunction(value) {
+
     const allAlphabetDivs = [divA,divB,divC,divD,divE,divF,divG,divH,divI,divJ,divK,divL,divM,divN,divO,divP,divQ,divR,divS,divT,divU,divV,divW,divX,divY,divZ]
     for (i = 0; i < (allAlphabetDivs.length); i++) {
-        allAlphabetDivs[i] = document.getElementById(allAlphabetDivs[i])
+
+        let profileCard = allAlphabetDivs[i].getElementsByTagName("div")[0];
+        let allCards = document.getElementById("allCards");
+        while (profileCard) {
+            allCards.appendChild(profileCard)
+            profileCard = allAlphabetDivs[i].getElementsByTagName("div")[0];
+        }
+        
     }
 
-    if (document.getElementById("lnameSorted").style.display == "grid") {
-        divLname = document.getElementById("lnameSorted");
-        p = divLname.getElementsByTagName("p");
+    let allCards = document.getElementById("allCards");
+    let p = allCards.getElementsByTagName("p");
 
-        while (p.length != 0) {
-            for (i = 0; i < (p.length); i++) {
-            firstLetter = p[i].className.charAt(0)
+    while (p.length != 0) {
+        for (i = 0; i < (p.length); i++) {
+
+            let firstLetter
+            if (value == "fname") {
+                firstLetter = p[i].classList[0].charAt(0)
+            } else if (value == "lname") {
+                firstLetter = p[i].classList[1].charAt(0)
+            }
+            
 
             if (firstLetter == "A") {
                 divA.appendChild(p[i].parentNode.parentNode)
@@ -82,19 +90,6 @@ function myFunction() {
             } else if (firstLetter == "Z") {
                 divZ.appendChild(p[i].parentNode.parentNode)
             }
-            
-            }
         }
-        
-        // if (p.length != 0) {
-        //     console.log("Still not empty")
-        //     console.log(p)
-        // } else if (p.length == 0) {
-        //     console.log("Empty")
-        //     console.log(p)
-        // } else {
-        //     console.log("It did not work")
-        // }
     }
 }
-    
