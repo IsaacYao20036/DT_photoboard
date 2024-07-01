@@ -54,7 +54,7 @@ img {
 
 /* CSS Grid */
 #allCards_f {
-    display: none;
+    display: block;
 }
 
 #allCards_l {
@@ -63,7 +63,7 @@ img {
 
 .alphabetDiv {
     display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-columns: 20% 20% 20% 20% 20%;
 }
 
 /* Profile card styling */
