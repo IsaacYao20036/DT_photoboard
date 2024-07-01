@@ -12,11 +12,26 @@
 </form> -->
 
 
+{{ staffmembers_f }}
+<br>
+<br>
+{{ staffmembers_l }}
+
+
 <p>Choose a filter to sort the results alphabetically:</p>
 <select id="filterSelect">
     <option value="fname">First name</option>
     <option value="lname">Last name</option>
 </select>
+
+<div>
+    <h1>AAA</h1>
+    {% for staffmember in staffmembers_f %}
+        {% if staffmember.fname[0] == "A" %}
+            {{ staffmember }}
+        {% endif %}
+    {% endfor %}
+</div>
 
 <br>
 <br>
@@ -24,17 +39,32 @@
 {% set div_list = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O", "P", "Q","R","S","T","U","V","W","X","Y","Z"] %}
 {% for i in range(div_list|length) %}
     <h2>{{ div_list[i] }}</h2>
-    <div id="div{{ div_list[i] }}" class="alphabetDiv"></div>
+    <div id="div{{ div_list[i] }}" class="alphabetDiv">
+        {% for staffmember in staffmembers_f %}
+            {% if staffmember.fname[0] == div_list[i] %}
+                {{ staffmember }}
+            {% endif %}
+        {% endfor %}
+    </div>
 {% endfor %}
 
-<h2>asdfadsf</h2>
-
-<div id="allCards">
-    {% for staffmember in staffmembers %}
+<div id="allCards_f">
+    {% for staffmember in staffmembers_f %}
         <div class="profileCard">
             <a href="/profile/{{ staffmember.code }}">
                 <img src="{{ staffmember.photo }}">
-                <p class="{{ staffmember.fname }} {{staffmember.lname}}">{{ staffmember }}</p>
+                <p class="{{ staffmember.fname }}">{{ staffmember }}</p>
+            </a>
+        </div>
+    {% endfor %}
+</div>
+
+<div id="allCards_l">
+    {% for staffmember in staffmembers_l %}
+        <div class="profileCard">
+            <a href="/profile/{{ staffmember.code }}">
+                <img src="{{ staffmember.photo }}">
+                <p class="{{ staffmember.lname }}">{{ staffmember }}</p>
             </a>
         </div>
     {% endfor %}

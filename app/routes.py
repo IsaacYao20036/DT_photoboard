@@ -42,7 +42,8 @@ def staffmember(code):
 @app.route('/search')
 def search():
     # form = Select_StaffMember()
-    staffmembers = models.StaffMember.query.all()
+    staffmembers_f = models.StaffMember.query.order_by(models.StaffMember.name).all()
+    staffmembers_l = models.StaffMember.query.order_by(models.StaffMember.lname).all()
     # form.staffmembers.choices = [(staffmember.code, staffmember.name) 
     #                               for staffmember in staffmembers]
     # if request.method == 'POST':
@@ -57,7 +58,8 @@ def search():
     #     # print('bugger: {}'.format(form.moviename.data))
     #     # flash("Thats a bad movie, you can't see its details")
     #     return redirect('/')
-    return render_template('search.html', staffmembers=staffmembers)
+    return render_template('search.html', staffmembers_f=staffmembers_f,
+                           staffmembers_l=staffmembers_l)
 
 
 if __name__ == '__main__':

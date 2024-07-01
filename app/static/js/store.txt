@@ -1,0 +1,51 @@
+    // for (i = 0; i < (allAlphabetDivs.length); i++) {
+
+    //     let switching, shouldSwitch;
+    //     switching = true;
+    //     p = allAlphabetDivs[i].getElementsByTagName("p")
+
+    //     /* Make a loop that will continue until
+    //     no switching has been done: */
+    //     while (switching) {
+    //         // Start by saying: no switching is done:
+    //         switching = false;
+
+    //         // Loop through all list items:
+    //         compareloop: for (j = 0; j < (p.length - 1); j++) {
+    //             // Start by saying there should be no switching:
+    //             shouldSwitch = false;
+
+    //             /* Check if the next item should
+    //             switch place with the current item: */
+    //             if (value == "fname") {
+    //                 console.log("fname")
+
+    //                 if (p[j].classList[0] > p[j + 1].classList[0]) {
+    //                     /* If next item is alphabetically lower than current item,
+    //                     mark as a switch and break the loop: */
+    //                     shouldSwitch = true;
+    //                     break compareloop;
+    //                 }
+    //             } else if (value == "lname") {
+    //                 console.log("lname")
+
+    //                 if (p[j].classList[1] > p[j + 1].classList[1]) {
+    //                     /* If next item is alphabetically lower than current item,
+    //                     mark as a switch and break the loop: */
+    //                     shouldSwitch = true;
+    //                     break compareloop;
+    //                 }
+    //             }
+                
+    //         }
+    //     }
+
+    //     if (shouldSwitch) {
+    //         /* If a switch has been marked, make the switch
+    //         and mark the switch as done: */
+    //         allAlphabetDivs[i].insertBefore(p[j + 1].parentNode.parentNode, p[j].parentNode.parentNode);
+    //         switching = true;
+
+    //         console.log([p[j], p[j+1]])
+    //     }
+    // }

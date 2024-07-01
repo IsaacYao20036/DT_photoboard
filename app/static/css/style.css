@@ -53,7 +53,11 @@ img {
 }
 
 /* CSS Grid */
-#allCards {
+#allCards_f {
+    display: none;
+}
+
+#allCards_l {
     display: none;
 }
 
