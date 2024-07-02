@@ -11,6 +11,8 @@
     <input type="submit" value="Go to profile">
 </form> -->
 
+
+
 <p>Choose a filter to sort the results alphabetically:</p>
 <select id="filterSelect">
     <option value="fname" selected>First name</option>
@@ -21,11 +23,23 @@
 
 {% set div_list = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O", "P","Q","R","S","T","U","V","W","X","Y","Z"] %}
 
+<div id="alphabetLinks_f">
+    {% for i in range(div_list|length) %}
+        <a href="#heading{{ div_list[i] }}_f">{{ div_list[i] }} &nbsp;</a>
+    {% endfor %}
+</div>
+
+<div id="alphabetLinks_l">
+    {% for i in range(div_list|length) %}
+        <a href="#heading{{ div_list[i] }}_l">{{ div_list[i] }} &nbsp;</a>
+    {% endfor %}
+</div>
+
 <div id="allCards_f">
     
     {% for i in range(div_list|length) %}
-        <h2>{{ div_list[i] }}</h2>
-        <div id="div{{ div_list[i] }}" class="alphabetDiv">
+        <h2 id="heading{{ div_list[i] }}_f">{{ div_list[i] }}</h2>
+        <div class="alphabetDiv">
             
             {% for staffmember in staffmembers_f %}
                 
@@ -45,8 +59,8 @@
 
 <div id="allCards_l">
     {% for i in range(div_list|length) %}
-        <h2>{{ div_list[i] }}</h2>
-        <div id="div{{ div_list[i] }}" class="alphabetDiv">
+        <h2 id="heading{{ div_list[i] }}_l">{{ div_list[i] }}</h2>
+        <div class="alphabetDiv">
             
             {% for staffmember in staffmembers_l %}
                 

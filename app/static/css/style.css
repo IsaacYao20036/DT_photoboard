@@ -61,6 +61,14 @@ img {
     display: none;
 }
 
+#alphabetLinks_f {
+    display: block;
+}
+
+#alphabetLinks_l {
+    display: none;
+}
+
 .alphabetDiv {
     display: grid;
     grid-template-columns: 20% 20% 20% 20% 20%;
