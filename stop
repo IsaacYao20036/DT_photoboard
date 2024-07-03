@@ -1,0 +1,211 @@
+[33mcommit a443ba5affd03c46fdb654f3968637794f768735[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Isaac Yao <20036@burnside.school.nz>
+Date:   Wed Jul 3 11:01:22 2024 +1200
+
+    working on sidebar
+
+[33mcommit 906bf166c105dfcd3cc146f359483ca71dccbf2a[m
+Author: IsaacYao20036 <20036@burnside.school.nz>
+Date:   Tue Jul 2 21:44:48 2024 +1200
+
+    working alphabet links for searchpg
+
+[33mcommit 9ab36649c80b187a1869fa410f70a94ea5e11b49[m
+Author: IsaacYao20036 <20036@burnside.school.nz>
+Date:   Mon Jul 1 22:47:43 2024 +1200
+
+    alphabet groups & sorting workproperly on searchpg
+
+[33mcommit 9ed4eb0f359adc34283ceaadbaca65df02a2c6f0[m
+Author: IsaacYao20036 <20036@burnside.school.nz>
+Date:   Mon Jul 1 22:20:01 2024 +1200
+
+    workingon proper alphabetgrouping & filtersorting
+
+[33mcommit 10da21b56c1505b3c37a2717ef94352e1e3907db[m
+Author: Isaac Yao <20036@burnside.school.nz>
+Date:   Mon Jul 1 15:29:04 2024 +1200
+
+    working on sorting correctly in alphabet groups
+
+[33mcommit 38daca54a4d449ae1ecc575369c4a66c0e2a690c[m
+Author: IsaacYao20036 <20036@burnside.school.nz>
+Date:   Sat Jun 29 19:11:46 2024 +1200
+
+    alphabet groupings work for fname&lname
+    
+    Not ordered properly yet
+
+[33mcommit 37b24685e1880c9b454f96c58058d5179ef395e5[m
+Author: IsaacYao20036 <20036@burnside.school.nz>
+Date:   Fri Jun 28 23:18:31 2024 +1200
+
+    lname sorting groups cards to alphabet headings (repetitive js code, note to find better soln)
+
+[33mcommit 20290e8d96f781fefba35bc3bd1bbd8d6888d38c[m
+Author: IsaacYao20036 <20036@burnside.school.nz>
+Date:   Thu Jun 27 21:36:52 2024 +1200
+
+    filter dropdown on searchpg works properly
+
+[33mcommit 62ffcc06a2bb8a93d1f2a3f7a9a66427ea177f77[m
+Author: Isaac Yao <20036@burnside.school.nz>
+Date:   Thu Jun 27 11:02:04 2024 +1200
+
+    more simplistic sorting search pg, working on reworking filter dropdown
+
+[33mcommit 2d93f624ba217fb7443d818e8fce1364cae28521[m
+Author: Isaac Yao <20036@burnside.school.nz>
+Date:   Wed Jun 26 14:21:31 2024 +1200
+
+    testing stuff for alphabet sidebar in searchpg
+
+[33mcommit e7a14502b4f90c97422a63c05425171d60e020e9[m
+Author: IsaacYao20036 <20036@burnside.school.nz>
+Date:   Wed Jun 26 09:55:37 2024 +1200
+
+    console.logs to prep for alphabet sidebar links
+
+[33mcommit 1ee374474b6736f2a51c15f23ce58fefa7631432[m
+Author: IsaacYao20036 <20036@burnside.school.nz>
+Date:   Tue Jun 25 22:07:42 2024 +1200
+
+    css grid for search pg&all cards have pics
+
+[33mcommit 1f3f7dc23c9fcc82968a99f3ecf92946f0fea502[m
+Author: Isaac Yao <20036@burnside.school.nz>
+Date:   Tue Jun 25 11:01:58 2024 +1200
+
+    working on profilecards in searchpg
+
+[33mcommit 4e95cdaf27ce3351f4d7920df18c6eb3f334f572[m
+Author: IsaacYao20036 <20036@burnside.school.nz>
+Date:   Mon Jun 24 21:34:39 2024 +1200
+
+    placeholderimgs to sampleprofiles+backbutton to profile & depart pgs
+
+[33mcommit 8ecd20812856ac66d0b21ad0e551499d2649c4ea[m
+Author: IsaacYao20036 <20036@burnside.school.nz>
+Date:   Mon Jun 24 12:40:22 2024 +1200
+
+    all school staff shown in home pg
+
+[33mcommit 84436b76611d07c08adc7a7063472ee96830f386[m
+Author: IsaacYao20036 <20036@burnside.school.nz>
+Date:   Mon Jun 24 12:18:47 2024 +1200
+
+    functional staff dropdowns in home pg+staff data in db
+
+[33mcommit a229be3580a1b10a0d721aedd94eb0bb1e9700c4[m
+Author: IsaacYao20036 <20036@burnside.school.nz>
+Date:   Sun Jun 23 21:00:55 2024 +1200
+
+    added dropdowns showing grouped staff in search pg + real staff data added in db for testing
+
+[33mcommit ede09848d5b7fa57e87f8dfd77cd54051f926163[m
+Author: IsaacYao20036 <20036@burnside.school.nz>
+Date:   Sat Jun 22 17:22:55 2024 +1200
+
+    filter chosen by dropdown in search pg
+
+[33mcommit 852be51a08d5428f92d0771bd5d5264681b728b9[m
+Author: IsaacYao20036 <20036@burnside.school.nz>
+Date:   Fri Jun 21 21:30:05 2024 +1200
+
+    search pg lname sorting done
+
+[33mcommit 337cb117626dfe33ee5d6188b77946ca0451ee53[m
+Author: Isaac Yao <20036@burnside.school.nz>
+Date:   Fri Jun 21 11:51:35 2024 +1200
+
+    fixed weird link bug in search pg, working on last name sorting
+
+[33mcommit c7179c5b38d924f2947617219e8e768ab2060a60[m
+Author: IsaacYao20036 <20036@burnside.school.nz>
+Date:   Thu Jun 20 21:49:32 2024 +1200
+
+    staff in search pg now in div not list
+
+[33mcommit ffa994d9273fd3be3afc1b428a4c519481c17185[m
+Author: Isaac Yao <20036@burnside.school.nz>
+Date:   Thu Jun 20 11:51:22 2024 +1200
+
+    added fname & lname rows in db
+
+[33mcommit adf426438aeec46d10f9752fd2029a2dfe5d3b66[m
+Author: Isaac Yao <20036@burnside.school.nz>
+Date:   Mon Jun 17 15:23:19 2024 +1200
+
+    deleted unnecessary code
+
+[33mcommit 7596d1f28bb3e360b7f2a33d78576e23824fca95[m
+Author: IsaacYao20036 <20036@burnside.school.nz>
+Date:   Sun Jun 16 21:53:41 2024 +1200
+
+    working on sorting and filter for search pg
+
+[33mcommit 9284c31329dc4129b9d981f84376e57195b635e8[m
+Author: IsaacYao20036 <20036@burnside.school.nz>
+Date:   Sun Jun 16 14:50:14 2024 +1200
+
+    small changes to search+pep8 changes
+
+[33mcommit 221458768144f39e85d01b44b354f4338b6be554[m
+Author: Isaac Yao <20036@burnside.school.nz>
+Date:   Thu Jun 13 11:05:45 2024 +1200
+
+    working of WTForms, fixed url contruction of select form
+
+[33mcommit 05adaab1140cd8040760093e976aa984199096dc[m
+Author: Isaac Yao <20036@burnside.school.nz>
+Date:   Thu Jun 13 11:02:15 2024 +1200
+
+    working of WTForms
+
+[33mcommit c2751946f9093023f0ceda7468fa38f408c839d9[m
+Author: Isaac Yao <20036@burnside.school.nz>
+Date:   Wed Jun 12 14:22:32 2024 +1200
+
+    working on WTForms
+
+[33mcommit dff09d1947734c9d515dbfc7d5b5005dfff671d0[m
+Author: Isaac Yao <20036@burnside.school.nz>
+Date:   Mon Jun 10 12:39:34 2024 +1200
+
+    show position data on profile pg + other stuff
+
+[33mcommit 74b3d41bd2155ee0ffd573c79071ad875704a7b6[m
+Author: Isaac Yao <20036@burnside.school.nz>
+Date:   Fri Jun 7 11:51:08 2024 +1200
+
+    put links in faculty&departpgs, add sampledata in positiontable in db
+
+[33mcommit 568fe3c29fe5a50da226ba23cc0c2a19968f2835[m
+Author: Isaac Yao <20036@burnside.school.nz>
+Date:   Wed Jun 5 11:00:44 2024 +1200
+
+    worked on faculty dropdown menu
+
+[33mcommit 3e3c582845bd0d88be698695b056621cd460b08e[m
+Author: Isaac Yao <20036@burnside.school.nz>
+Date:   Thu May 30 11:00:58 2024 +1200
+
+    working on nav bar
+
+[33mcommit efba4fb988da094196c5976e11bde10571756dd5[m
+Author: Isaac Yao <20036@burnside.school.nz>
+Date:   Wed May 29 14:18:19 2024 +1200
+
+    faculty and depart showed on profile pg
+
+[33mcommit c48cdf9ba79c5f21b0f3fc903cf9dae1b34d2c55[m
+Author: Isaac Yao <20036@burnside.school.nz>
+Date:   Fri May 24 11:52:19 2024 +1200
+
+    new sampledata toshowon faculty&depart pages,new division data toshowon profilepage
+
+[33mcommit d1a3c19b3b021f07c42bd2bff885d201e6dff1f3[m
+Author: Isaac Yao <20036@burnside.school.nz>
+Date:   Tue May 21 14:02:22 2024 +1200
+
+    initial commit
