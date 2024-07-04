@@ -26,7 +26,7 @@
         <br>
     {% endfor %}
     </div>
-  </div>
+</div>
 
 <p>Choose a filter to sort the results alphabetically:</p>
 <select id="filterSelect">
@@ -77,6 +77,10 @@
         </div>
     {% endfor %}
 </div>
+
+<a href="#" id="backToTopBtn">
+    <button type="button">Back to top ↑</button>
+</a>
 
 <script src="{{url_for('static', filename='/js/search.js')}}"></script>  
 
