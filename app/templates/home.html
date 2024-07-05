@@ -19,6 +19,9 @@
     </div>
 </div>
 
+<br>
+<br>
+
 <div class="dropdown">
     <button onclick="toggleDropdown(leadershipTeamDropdown)" class="dropbtn">Leadership Team</button>
     <div id="leadershipTeamDropdown" class="dropdown-content">
@@ -33,6 +36,9 @@
         {% endfor %}
     </div>
 </div>
+
+<br>
+<br>
 
 <div class="dropdown">
     <button onclick="toggleDropdown(deansDropdown)" class="dropbtn">Deans</button>
@@ -49,6 +55,9 @@
     </div>
 </div>
 
+<br>
+<br>
+
 <div class="dropdown">
     <button onclick="toggleDropdown(counsellorsDropdown)" class="dropbtn">Counsellors</button>
     <div id="counsellorsDropdown" class="dropdown-content">
@@ -64,12 +73,18 @@
     </div>
 </div>
 
+<br>
+<br>
+
 <h2>All School Staff</h2>
-<div>
+<div id="allSchoolStaff">
     {% for staffmember in staffmembers %}
+        <div class="profileCard">
             <a href="/profile/{{ staffmember.code }}">
-                <p class="{{ staffmember.lname }}">{{ staffmember }}</p>
+                <img src="{{ staffmember.photo }}">
+                <p>{{ staffmember }}</p>
             </a>
+        </div>
     {% endfor %}
 </div>
 {% endblock %}

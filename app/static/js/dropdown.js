@@ -6,7 +6,7 @@ toggle between hiding and showing the dropdown content */
 function toggleDropdown(dropdownID) {
     
     if (dropdownID == navDropdown) {
-        document.getElementById("navDropdown").classList.toggle("show")
+        document.getElementById("navDropdown").classList.toggle("show-block")
     } else if (dropdownID == principalDropdown) {
         document.getElementById("principalDropdown").classList.toggle("show")
     }
