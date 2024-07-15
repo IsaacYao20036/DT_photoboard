@@ -1,3 +1,7 @@
+/* ********* */
+/* DROPDOWNS */
+/* ********* */
+
 /* Dropdown code from W3Schools: https://www.w3schools.com/howto/howto_js_dropdown.asp */
 
 /* Dropdown Button */
@@ -46,11 +50,16 @@
     display: block;
 }
 
-#allSchoolStaff{
-    display: grid;
-    grid-template-columns: auto auto auto auto auto auto auto auto;
-}
 
+/* ************* */
+/* PROFILE CARDS */
+/* ************* */
+
+/* Profile card styling */
+.profileCard {
+    width: fit-content;
+    border: 1px solid black
+}
 
 /* Image styling */
 img {
@@ -58,13 +67,38 @@ img {
     border: 5px solid black;
 }
 
-/* CSS Grid */
+
+/* **** */
+/* HOME */
+/* **** */
+
+#allSchoolStaff{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 50px;
+    overflow-y: scroll;
+    height: 900px;
+    background-color: grey;
+}
+
+
+/* ****** */
+/* SEARCH */
+/* ****** */
+
 #allCards_f {
     display: block;
 }
 
 #allCards_l {
     display: none;
+}
+
+.alphabetDiv {
+    display: grid;
+    grid-template-columns: repeat(4, min-content);
+    gap: 50px;
 }
 
 #alphabetLinks_f {
@@ -75,19 +109,7 @@ img {
     display: none;
 }
 
-.alphabetDiv {
-    display: grid;
-    grid-template-columns: 23% 23% 23% 23%;
-}
-
-/* Profile card styling */
-.profileCard {
-    width: fit-content;
-    border: 1px solid black
-}
-
-
-/* Dropdown code from W3Schools: https://www.w3schools.com/howto/howto_js_sidenav.asp */
+/* Alphabet Sidebar code from W3Schools: https://www.w3schools.com/howto/howto_js_sidenav.asp */
 
 .sidenav {
     height: 100%;
@@ -124,7 +146,7 @@ img {
     .sidenav a {font-size: 18px;}
 }
 
-
+/* Back to Top button styling */
 #backToTopBtn{
     position: fixed;
     z-index: 1;
