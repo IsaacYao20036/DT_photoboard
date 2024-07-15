@@ -4,11 +4,18 @@
 <p>FACULTY</p>
 
 {{ faculty }}
+
 <p>HOF: <a href="/profile/{{ faculty.hof.code }}">{{ faculty.hof }}</a></p>
+
 Departments:
-{% for department in faculty.departments %}
-    <br>
-    <a href="/department/{{ department.id }}">{{ department }}</a>
-{% endfor %}
+<div id="departmentsDiv">
+
+    {% for department in faculty.departments %}
+        <a href="/department/{{ department.id }}" class="departmentBtn">
+            <h1>{{ department }}</h1>
+        </a>
+    {% endfor %}
+</div>
+
 
 {% endblock %}

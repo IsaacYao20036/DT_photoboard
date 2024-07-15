@@ -5,11 +5,21 @@
 
 <p>Department</p>
 {{ department }}
+
 <p>HOD: <a href="/profile/{{ department.hod.code }}">{{ department.hod }}</a></p>
+
 Staff Members:
-{% for staffmember in department.staffmembers %}
-    <br>
-    <a href="/profile/{{ staffmember.code }}">{{ staffmember }}</a>
-{% endfor %}
+<div id="departmentStaff">
+
+    {% for staffmember in department.staffmembers %}
+        <div class="profileCard">
+            <a href="/profile/{{ staffmember.code }}">
+                <img src="{{ staffmember.photo }}">
+                <p>{{ staffmember }}</p>
+            </a>
+        </div>
+    {% endfor %}
+</div>
+
 
 {% endblock %}

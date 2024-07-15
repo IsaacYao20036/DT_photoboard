@@ -160,3 +160,42 @@ a button {
     height: 50px;
     width: 100px;
 }
+
+
+/* ******* */
+/* FACULTY */
+/* ******* */
+
+#departmentsDiv {
+    display: grid;
+    grid-template-columns: repeat(4, min-content);
+    gap: 125px;
+}
+
+.departmentBtn {
+    position: relative;
+    height: 200px;
+    min-width: 200px;
+    background-color: grey;
+    border: 1px solid black
+}
+
+.departmentBtn > h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -40px 0 0 -80px;
+    text-decoration: none;
+    color: black;
+}
+
+
+/* ********** */
+/* DEPARTMENT */
+/* ********** */
+
+#departmentStaff {
+    display: grid;
+    grid-template-columns: repeat(4, min-content);
+    gap: 50px;
+}
