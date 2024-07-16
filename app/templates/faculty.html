@@ -1,6 +1,8 @@
 {% extends 'layout.html' %}
 {% block content %}
 
+{% set duplicate_check = [] %}
+
 <p>FACULTY</p>
 
 {{ faculty }}
@@ -14,6 +16,27 @@ Departments:
         <a href="/department/{{ department.id }}" class="departmentBtn">
             <h1>{{ department }}</h1>
         </a>
+    {% endfor %}
+</div>
+
+All {{ faculty }} Staff:
+
+<div id="facultyStaff">
+    {% for department in faculty.departments %}
+
+        {% for staffmember in department.staffmembers %}
+
+            {% if duplicate_check[-1] != staffmember %}
+                <div class="profileCard">
+                    <a href="/profile/{{ staffmember.code }}">
+                        <img src="{{ staffmember.photo }}">
+                        <p>{{ staffmember }}</p>
+                    </a>
+                </div>
+            {% endif %}
+            {% if duplicate_check.append(staffmember) %}
+            {% endif %}
+        {% endfor %}
     {% endfor %}
 </div>
 
