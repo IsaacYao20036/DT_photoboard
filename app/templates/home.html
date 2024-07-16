@@ -10,9 +10,12 @@
 		{% for staffmember in staffmembers %}
             {% for position in staffmember.positions %}
                 {% if position.group == "Principal" %}
-                    <a href="/profile/{{ staffmember.code }}">
-                        <p>{{ staffmember }} ({{ position }})</p>
-                    </a>
+                    <div class="profileCard">
+                        <a href="/profile/{{ staffmember.code }}">
+                            <img src="{{ staffmember.photo }}">
+                            <p>{{ staffmember }} ({{ position }})</p>
+                        </a>
+                    </div>
                 {% endif %}
             {% endfor %}
         {% endfor %}
@@ -28,9 +31,12 @@
 		{% for staffmember in staffmembers %}
             {% for position in staffmember.positions %}
                 {% if position.group == "Leadership Team" %}
-                    <a href="/profile/{{ staffmember.code }}">
-                        <p>{{ staffmember }} ({{ position }})</p>
-                    </a>
+                    <div class="profileCard">
+                        <a href="/profile/{{ staffmember.code }}">
+                            <img src="{{ staffmember.photo }}">
+                            <p>{{ staffmember }} ({{ position }})</p>
+                        </a>
+                    </div>
                 {% endif %}
             {% endfor %}
         {% endfor %}
@@ -46,9 +52,12 @@
 		{% for staffmember in staffmembers %}
             {% for position in staffmember.positions %}
                 {% if position.group == "Deans" %}
-                    <a href="/profile/{{ staffmember.code }}">
-                        <p>{{ staffmember }} ({{ position }})</p>
-                    </a>
+                    <div class="profileCard">
+                        <a href="/profile/{{ staffmember.code }}">
+                            <img src="{{ staffmember.photo }}">
+                            <p>{{ staffmember }} ({{ position }})</p>
+                        </a>
+                    </div>
                 {% endif %}
             {% endfor %}
         {% endfor %}
@@ -64,9 +73,12 @@
 		{% for staffmember in staffmembers %}
             {% for position in staffmember.positions %}
                 {% if position.group == "Counsellors" %}
-                    <a href="/profile/{{ staffmember.code }}">
-                        <p>{{ staffmember }} ({{ position }})</p>
-                    </a>
+                    <div class="profileCard">
+                        <a href="/profile/{{ staffmember.code }}">
+                            <img src="{{ staffmember.photo }}">
+                            <p>{{ staffmember }} ({{ position }})</p>
+                        </a>
+                    </div>
                 {% endif %}
             {% endfor %}
         {% endfor %}

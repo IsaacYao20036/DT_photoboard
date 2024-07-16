@@ -33,6 +33,9 @@ window.onclick = function(event) {
             if (openDropdown.classList.contains('show')) {
                 openDropdown.classList.remove('show');
             }
+            else if (openDropdown.classList.contains('show-block')) {
+                openDropdown.classList.remove('show-block');
+            }
         }
     }
     
