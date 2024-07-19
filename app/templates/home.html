@@ -1,8 +1,6 @@
 {% extends 'layout.html' %}
 {% block content %}
 
-<p>Hello World!</p>
-
 <!-- Dropdown code from W3Schools: https://www.w3schools.com/howto/howto_js_dropdown.asp -->
 <div class="dropdown">
     <button onclick="toggleDropdown(principalDropdown)" class="dropbtn">Principal</button>
@@ -13,7 +11,8 @@
                     <div class="profileCard">
                         <a href="/profile/{{ staffmember.code }}">
                             <img src="{{ staffmember.photo }}">
-                            <p>{{ staffmember }} ({{ position }})</p>
+                            <p>{{ staffmember }} ({{ staffmember.code }})</p>
+                            <p>{{ position }}</p>
                         </a>
                     </div>
                 {% endif %}
@@ -34,7 +33,8 @@
                     <div class="profileCard">
                         <a href="/profile/{{ staffmember.code }}">
                             <img src="{{ staffmember.photo }}">
-                            <p>{{ staffmember }} ({{ position }})</p>
+                            <p>{{ staffmember }} ({{ staffmember.code }})</p>
+                            <p>{{ position }}</p>
                         </a>
                     </div>
                 {% endif %}
@@ -55,7 +55,8 @@
                     <div class="profileCard">
                         <a href="/profile/{{ staffmember.code }}">
                             <img src="{{ staffmember.photo }}">
-                            <p>{{ staffmember }} ({{ position }})</p>
+                            <p>{{ staffmember }} ({{ staffmember.code }})</p>
+                            <p>{{ position }}</p>
                         </a>
                     </div>
                 {% endif %}
@@ -76,7 +77,8 @@
                     <div class="profileCard">
                         <a href="/profile/{{ staffmember.code }}">
                             <img src="{{ staffmember.photo }}">
-                            <p>{{ staffmember }} ({{ position }})</p>
+                            <p>{{ staffmember }} ({{ staffmember.code }})</p>
+                            <p>{{ position }}</p>
                         </a>
                     </div>
                 {% endif %}
@@ -94,7 +96,7 @@
         <div class="profileCard">
             <a href="/profile/{{ staffmember.code }}">
                 <img src="{{ staffmember.photo }}">
-                <p>{{ staffmember }}</p>
+                <p>{{ staffmember }} ({{ staffmember.code }})</p>
             </a>
         </div>
     {% endfor %}

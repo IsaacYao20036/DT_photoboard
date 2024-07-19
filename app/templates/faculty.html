@@ -7,7 +7,7 @@
 
 {{ faculty }}
 
-<p>HOF: <a href="/profile/{{ faculty.hof.code }}">{{ faculty.hof }}</a></p>
+<p>HOF: <a href="/profile/{{ faculty.hof.code }}">{{ faculty.hof }} ({{ faculty.hof.code }})</a></p>
 
 Departments:
 <div id="departmentsDiv">
@@ -30,7 +30,7 @@ All {{ faculty }} Staff:
                 <div class="profileCard">
                     <a href="/profile/{{ staffmember.code }}">
                         <img src="{{ staffmember.photo }}">
-                        <p>{{ staffmember }}</p>
+                        <p>{{ staffmember }} ({{ staffmember.code }})</p>
                     </a>
                 </div>
             {% endif %}

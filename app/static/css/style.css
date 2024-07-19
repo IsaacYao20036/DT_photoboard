@@ -64,6 +64,11 @@
     border: 1px solid black
 }
 
+.profileCard > a {
+    text-decoration: none;
+    color: black;
+}
+
 /* Image styling */
 img {
     width: 200px;
