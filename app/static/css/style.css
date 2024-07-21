@@ -76,6 +76,40 @@ img {
 }
 
 
+/* ****** */
+/* HEADER */
+/* ****** */
+
+header {
+    position: fixed;
+}
+
+a h1{
+    display: inline;
+    float: left;
+}
+
+
+/* *** */
+/* NAV */
+/* *** */
+
+nav {
+    float: inline-start;
+    display: inline;
+    margin-left: 200px;
+}
+
+
+/* **** */
+/* MAIN */
+/* **** */
+
+main {
+    padding-top: 100px;
+}
+
+
 /* **** */
 /* HOME */
 /* **** */
