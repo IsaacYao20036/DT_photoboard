@@ -6,10 +6,9 @@
 
 /* Dropdown Button */
 .dropbtn {
-    /* background-color: #3498DB; */
+    background-color: grey;
     color: black;
     padding: 16px;
-    font-size: 16px;
     border: none;
     cursor: pointer;
 }
@@ -94,6 +93,7 @@ header {
 a h1{
     display: inline;
     float: left;
+    color: black;
 }
 
 
@@ -104,15 +104,20 @@ a h1{
 nav {
     float: inline-start;
     display: inline;
-    margin-top: 20px;
+    margin-top: 20px;   
     margin-left: 400px;
 }
 
 nav > a {
+    float: inline-start;
     margin-right: 100px;
+    color: black;
     text-decoration: none;
 }
 
+nav > .dropdown > .dropbtn {
+    padding: 0px;
+}
 
 /* **** */
 /* MAIN */
