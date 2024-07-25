@@ -1,19 +1,9 @@
 {% extends 'layout.html' %}
 {% block content %}
 
-<p>Search Directory</p>
-
-<!-- Learning how to use WTForms -->
-<!-- This form will likely be removed or reworked -->
-<!-- <form method="POST" enctype="multipart/form-data">
-    {# {{ form.csrf_token }} #}
-    {# {{ form.staffmembers }}<br>{{ form.errors }} #}
-    <input type="submit" value="Go to profile">
-</form> -->
-
 {% set div_list = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O", "P","Q","R","S","T","U","V","W","X","Y","Z"] %}
 
-<div class="sidenav">
+<div class="sidebar">
     <div id="alphabetLinks_f">
     {% for i in range(div_list|length) %}
         <a href="#heading{{ div_list[i] }}_f">{{ div_list[i] }} &nbsp;</a>

@@ -168,7 +168,7 @@ main {
     flex-wrap: wrap;
     gap: 50px;
     overflow-y: scroll;
-    height: 900px;
+    height: 950px;
     padding: 10px;
     background-color: #b1c1df;
 }
@@ -202,20 +202,18 @@ main {
 
 /* Alphabet Sidebar code from W3Schools: https://www.w3schools.com/howto/howto_js_sidenav.asp */
 
-.sidenav {
-    height: 100%;
+.sidebar {
+    height: 90%;
     width: 100px;
     position: fixed;
-    z-index: 1;
     right: 0;
     bottom: 0;
     background-color: grey;
     overflow-x: hidden;
     overflow-y: scroll;
-    padding-top: 40px;
 }
   
-.sidenav a {
+.sidebar a {
     margin-top: 30px;
     margin-left: 30px;
     text-decoration: none;
@@ -224,7 +222,7 @@ main {
     display: block;
 }
   
-.sidenav a:hover {
+.sidebar a:hover {
     color: #f1f1f1;
 }
   
@@ -233,8 +231,8 @@ main {
 }
   
 @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
 }
 
 /* Back to Top button styling */
