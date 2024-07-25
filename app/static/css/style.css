@@ -1,3 +1,8 @@
+p {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
 /* ********* */
 /* DROPDOWNS */
 /* ********* */
@@ -8,7 +13,7 @@
 .dropbtn {
     background-color: #173248;
     color: white;
-    padding: 16px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     border: none;
     cursor: pointer;
 }
@@ -23,15 +28,12 @@
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #173248;
+    background-color: #537b9c;
     min-width: 160px;
-    /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
-    z-index: 1;
 }
 
 /* Links inside the dropdown */
 .dropdown-content a {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: white;
     padding: 12px 16px;
     text-decoration: none;
@@ -119,13 +121,12 @@ nav > a {
 }
 
 nav > .dropdown {
-    bottom: 10px;
+    top: 5px;
 }
 
-nav > .dropdown > .dropbtn {
-    padding: 0px;
+nav > .dropdown > .dropdown-content {
+    background-color: #173248;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: white;
 }
 
 
