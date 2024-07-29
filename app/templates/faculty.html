@@ -3,11 +3,10 @@
 
 {% set duplicate_check = [] %}
 
-<p>FACULTY</p>
+<h2 id="facultyh2">Faculty:</h2>
+<h1>{{ faculty }}</h1>
 
-{{ faculty }}
-
-<p>HOF: <a href="/profile/{{ faculty.hof.code }}">{{ faculty.hof }} ({{ faculty.hof.code }})</a></p>
+<h2>HOF: <a href="/profile/{{ faculty.hof.code }}">{{ faculty.hof }} ({{ faculty.hof.code }})</a></h2>
 
 Departments:
 <div id="departmentsDiv">

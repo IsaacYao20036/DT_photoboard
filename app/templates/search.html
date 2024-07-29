@@ -29,7 +29,7 @@
 <div id="allCards_f">
     
     {% for i in range(div_list|length) %}
-        <h2 id="heading{{ div_list[i] }}_f">{{ div_list[i] }}</h2>
+        <h2 id="heading{{ div_list[i] }}_f" class="alphabetHeading">{{ div_list[i] }}</h2>
         <div class="alphabetDiv">
             
             {% for staffmember in staffmembers_f %}
@@ -50,7 +50,7 @@
 
 <div id="allCards_l">
     {% for i in range(div_list|length) %}
-        <h2 id="heading{{ div_list[i] }}_l">{{ div_list[i] }}</h2>
+        <h2 id="heading{{ div_list[i] }}_l" class="alphabetHeading">{{ div_list[i] }}</h2>
         <div class="alphabetDiv">
             
             {% for staffmember in staffmembers_l %}
