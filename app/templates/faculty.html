@@ -8,8 +8,10 @@
 
 <h2>HOF: <a href="/profile/{{ faculty.hof.code }}">{{ faculty.hof }} ({{ faculty.hof.code }})</a></h2>
 <br>
+<br>
 
-Departments:
+<h2>Departments:</h2>
+<br>
 <div id="departmentsDiv">
 
     {% for department in faculty.departments %}
@@ -18,9 +20,11 @@ Departments:
         </a>
     {% endfor %}
 </div>
+<br>
+<br>
 
-All {{ faculty }} Staff:
-
+<h2>All {{ faculty }} Staff:</h2>
+<br>
 <div id="facultyStaff">
     {% for department in faculty.departments %}
 

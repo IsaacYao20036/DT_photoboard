@@ -1,14 +1,18 @@
 {% extends 'layout.html' %}
 {% block content %}
 
-<button type="button" onclick="history.back()">←Back</button>
+<h2 id="departmenth2">Department:</h2>
+<h1>{{ department }}</h1>
 
-<p>Department</p>
-{{ department }}
+<button type="button" onclick="history.back()" class="backBtn">←Back</button>
 
-<p>HOD: <a href="/profile/{{ department.hod.code }}">{{ department.hod }} ({{ department.hod.code }})</a></p>
 
-Staff Members:
+<h2>HOD: <a href="/profile/{{ department.hod.code }}">{{ department.hod }} ({{ department.hod.code }})</a></h2>
+<br>
+<br>
+
+<h2>Staff Members:</h2>
+<br>
 <div id="departmentStaff">
 
     {% for staffmember in department.staffmembers %}
