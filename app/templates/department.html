@@ -1,11 +1,10 @@
 {% extends 'layout.html' %}
 {% block content %}
 
-<h2 id="departmenth2">Department:</h2>
+<h2 class="titleh2">Department:</h2>
 <h1>{{ department }}</h1>
 
 <button type="button" onclick="history.back()" class="backBtn">←Back</button>
-
 
 <h2>HOD: <a href="/profile/{{ department.hod.code }}">{{ department.hod }} ({{ department.hod.code }})</a></h2>
 <br>

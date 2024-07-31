@@ -1,11 +1,11 @@
 h1 {
     margin: auto;
+    width: fit-content;
     color: #173248;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-align: center;
     text-decoration: underline solid 5px;
 }
-
 
 h2 {
     margin: auto;
@@ -95,12 +95,6 @@ p {
     padding-left: 5px;
 }
 
-/* Image styling */
-img {
-    width: 200px;
-    border: 5px solid black;
-}
-
 
 /* ****** */
 /* HEADER */
@@ -165,7 +159,20 @@ main {
     padding-top: 140px;
 }
 
+/* Image styling */
+img {
+    width: 200px;
+    border: 5px solid black;
+}
+
+.titleh2 {
+    width: fit-content;
+    text-align: center;
+}
+
 .backBtn {
+    position: relative;
+    bottom: 50px;
     height: 50px;
     width: 100px;
     border-style: solid;
@@ -296,10 +303,6 @@ a button {
 /* FACULTY */
 /* ******* */
 
-#facultyh2 {
-    text-align: center;
-}
-
 #departmentsDiv {
     display: grid;
     grid-template-columns: repeat(4, min-content);
@@ -336,14 +339,25 @@ a button {
 /* DEPARTMENT */
 /* ********** */
 
-#departmenth2 {
-    text-align: center;
-}
-
 #departmentStaff {
     display: grid;
     grid-template-columns: repeat(4, min-content);
     gap: 125px;
     padding: 10px;
     background-color: #b1c1df;
+}
+
+
+/* ******* */
+/* PROFILE */
+/* ******* */
+
+#profileimg {
+    margin-right: auto;
+    display: inline-block;
+    width: 400px;
+}
+
+#profileDetails {
+    display: inline-block;
 }
