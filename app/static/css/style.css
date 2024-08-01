@@ -13,7 +13,6 @@ h2 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-
 p {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
@@ -360,4 +359,15 @@ a button {
 
 #profileDetails {
     display: inline-block;
+    vertical-align: top;
+    margin-left: 50px;
+}
+
+.profileText {
+    font-size: 1.17em;
+}
+
+ul li {
+    font-size: 1.17em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
