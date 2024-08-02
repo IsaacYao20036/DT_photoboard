@@ -354,13 +354,14 @@ a button {
 #profileimg {
     margin-right: auto;
     display: inline-block;
+    margin-left: 50px;
     width: 400px;
 }
 
 #profileDetails {
     display: inline-block;
     vertical-align: top;
-    margin-left: 50px;
+    margin-left: 100px;
 }
 
 .profileText {
