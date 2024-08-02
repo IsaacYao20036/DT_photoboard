@@ -2,6 +2,7 @@ from app import app
 from flask import render_template, abort, redirect, request, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
 import os
+import csv
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 db = SQLAlchemy()
@@ -61,6 +62,17 @@ def search():
     return render_template('search.html', staffmembers_f=staffmembers_f,
                            staffmembers_l=staffmembers_l)
 
+
+# def load_from_csv(filename):
+#     print("Adding...")
+#     with open(filename, newline='', encoding='latin-1') as csvfile:
+#         reader = csv.reader(csvfile)
+#         for row in reader:
+#             models.StaffMember.update(row[2], row[3], row[4], "vinyl")
+#         print("DONE")
+
+
+# load_from_csv("app\photoboard.csv")
 
 if __name__ == '__main__':
     app.run(debug=True)
