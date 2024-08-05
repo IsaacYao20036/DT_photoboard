@@ -63,16 +63,30 @@ def search():
                            staffmembers_l=staffmembers_l)
 
 
-# def load_from_csv(filename):
-#     print("Adding...")
-#     with open(filename, newline='', encoding='latin-1') as csvfile:
-#         reader = csv.reader(csvfile)
-#         for row in reader:
-#             models.StaffMember.update(row[2], row[3], row[4], "vinyl")
-#         print("DONE")
+def load_from_csv(filename):
+    print("Adding...")
+    with open(filename, newline='', encoding='latin-1') as csvfile:
+        reader = csv.reader(csvfile)
+        for row in reader:
+            add_staffmember(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7])
+            print(row)
+        print("DONE")
 
 
-# load_from_csv("app\photoboard.csv")
+def add_staffmember(code, name, fname, lname, photo, division_id, email, likely_location):
+    new_staffmember = models.StaffMember()
+
+    new_staffmember.code = code
+    new_staffmember.name = name
+    new_staffmember.fname = fname
+    new_staffmember.lname = lname
+    new_staffmember.photo = photo
+    new_staffmember.email = email
+    new_staffmember.division_id = division_id
+    new_staffmember.likely_location = likely_location
+
+
+load_from_csv("app\photoboard.csv")
 
 if __name__ == '__main__':
     app.run(debug=True)
