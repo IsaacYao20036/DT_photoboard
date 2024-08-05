@@ -85,6 +85,10 @@ def add_staffmember(code, name, fname, lname, photo, division_id, email, likely_
     new_staffmember.division_id = division_id
     new_staffmember.likely_location = likely_location
 
+    with app.app_context():
+        db.session.merge(new_staffmember)
+        db.session.commit()
+
 
 load_from_csv("app\photoboard.csv")
 
