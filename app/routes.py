@@ -1,6 +1,7 @@
 from app import app
 from flask import render_template, abort, redirect, request, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
+from flask_login import LoginManager
 import os
 import csv
 
@@ -11,6 +12,9 @@ app.config[
     ] = 'sqlite:///' + os.path.join(basedir, 'photoboard.db')
 db.init_app(app)
 app.secret_key = 'correcthorsebatterystaple'
+
+login_manager = LoginManager()
+login_manager.init_app(app)
 
 import app.models as models
 from app.forms import Select_StaffMember
