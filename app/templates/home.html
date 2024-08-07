@@ -1,6 +1,12 @@
 {% extends 'layout.html' %}
 {% block content %}
 
+{% if current_user.is_authenticated %}
+    <h1>You are logged in</h1>
+{% else %}
+    <h1>You are not logged in</h1>
+{% endif %}
+
 <!-- Dropdown code from W3Schools: https://www.w3schools.com/howto/howto_js_dropdown.asp -->
 <div class="dropdown">
     <button onclick="toggleDropdown(principalDropdown)" class="dropbtn">Principal</button>

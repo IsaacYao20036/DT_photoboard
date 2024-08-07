@@ -1,4 +1,5 @@
-from app.routes import db
+from app.routes import db, app
+from flask_login import UserMixin
 
 Staff_Position = db.Table(
     'Staff_Position',
@@ -89,7 +90,7 @@ class Department(db.Model):
 # Code from https://www.geeksforgeeks.org/how-to-add-authentication-to-your-app-with-flask-login/
 
 # Create user model
-class Users(UserMixin):
+class Users(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(), unique=True,
                          nullable=False)
