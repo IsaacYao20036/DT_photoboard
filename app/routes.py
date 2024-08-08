@@ -2,6 +2,7 @@ from app import app
 from flask import render_template, abort, redirect, request, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, login_user, logout_user
+from flask_bcrypt import Bcrypt
 import os
 import csv
 
@@ -15,6 +16,8 @@ app.secret_key = 'correcthorsebatterystaple'
 
 login_manager = LoginManager()
 login_manager.init_app(app)
+
+bcrypt = Bcrypt(app)
 
 import app.models as models
 from app.forms import Select_StaffMember
@@ -106,7 +109,8 @@ def register():
     # If the user made a POST request, create a new user
     if request.method == "POST":
         user = models.Users(username=request.form.get("username"),
-                            password=request.form.get("password"))
+                            password=request.form.get("password"),
+                            hashed_password=bcrypt.generate_password_hash('password').decode('utf-8'))
         # Add the user to the database
         db.session.add(user)
         # Commit the changes made
@@ -127,7 +131,8 @@ def login():
             username=request.form.get("username")).first()
         # Check if the password entered is the
         # same as the user's password
-        if user.password == request.form.get("password"):
+        # if user.password == request.form.get("password"):
+        if user.hashed_password == bcrypt.check_password_hash('password', request.form.get('password')):
             # Use the login_user method to log in the user
             login_user(user)
             return redirect(url_for("home"))

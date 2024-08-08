@@ -96,3 +96,4 @@ class Users(UserMixin, db.Model):
                          nullable=False)
     password = db.Column(db.String(),
                          nullable=False)
+    hashed_password = db.Column(db.String())
