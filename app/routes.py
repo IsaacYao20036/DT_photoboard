@@ -95,9 +95,24 @@ def add_staffmember(code, name, fname, lname, photo, division_id, email, likely_
         db.session.merge(new_staffmember)
         db.session.commit()
 
+@app.route('/upload')
+def upload():
+    # load_from_csv("app\photoboard.csv")
 
-load_from_csv("app\photoboard.csv")
+    # if request.method == 'POST':
+    #     if form.validate_on_submit():
+    #         print("YAY! - got {}, of type {}".format(form.moviename.data, type(form.moviename.data)))
+    #         print("Redirecting to: {}".format(url_for('details', ref=form.moviename.data)))
+    #         profile = models.StaffMember.query.filter_by(code=form.staffmember.data).first
+    #         return redirect(url_for('staffmember',
+    #                                 code=form.staffmembers.data))
 
+    # else:
+    #     # print('bugger: {}'.format(form.moviename.data))
+    #     # flash("Thats a bad movie, you can't see its details")
+    #     return redirect('/')
+    
+    return render_template('upload.html')
 
 @login_manager.user_loader
 def loader_user(user_id):
