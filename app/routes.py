@@ -1,10 +1,11 @@
 from app import app
-from flask import render_template, abort, redirect, request, url_for, flash
+from flask import render_template, abort, redirect, request, url_for, flash, make_response
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, login_user, logout_user, current_user
 from flask_bcrypt import Bcrypt
 import os
 import csv
+import io
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 db = SQLAlchemy()
@@ -87,16 +88,16 @@ def add_staffmember(code, name, fname, lname, photo, division_id, email, likely_
     new_staffmember.fname = fname
     new_staffmember.lname = lname
     new_staffmember.photo = photo
-    new_staffmember.email = email
     new_staffmember.division_id = division_id
+    new_staffmember.email = email
     new_staffmember.likely_location = likely_location
 
     with app.app_context():
         db.session.merge(new_staffmember)
         db.session.commit()
 
-@app.route('/upload')
-def upload():
+@app.route('/edit')
+def edit():
     # load_from_csv("app\photoboard.csv")
 
     # if request.method == 'POST':
@@ -112,7 +113,27 @@ def upload():
     #     # flash("Thats a bad movie, you can't see its details")
     #     return redirect('/')
     
-    return render_template('upload.html')
+    return render_template('edit.html')
+
+
+@app.route("/download")
+def download():
+    """Exports all the parts as a csv file"""
+    # TODO: This should only be admin
+    # TODO: Export all fields
+    staffmembers = models.StaffMember.query.all()
+
+    buf = io.StringIO()
+    w = csv.writer(buf)
+    # w.writerow(["name"])
+    for staffmember in staffmembers:
+        row = [staffmember.code, staffmember.name, staffmember.fname, staffmember.lname, staffmember.photo, staffmember.division_id, staffmember.email, staffmember.likely_location]
+        w.writerow(row)
+    response = make_response(buf.getvalue())
+    response.headers.set('Content-Type', 'text/csv')
+    response.headers.set('Content-Disposition', 'attachment', filename="photoboard.csv")
+    return response
+
 
 @login_manager.user_loader
 def loader_user(user_id):
