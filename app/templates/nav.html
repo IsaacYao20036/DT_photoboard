@@ -1,14 +1,24 @@
-<a href="/">Home</a>
-<a href="/search">Search</a>
-<!-- Dropdown code from W3Schools: https://www.w3schools.com/howto/howto_js_dropdown.asp -->
-<div class="dropdown">
-    <button onclick="toggleDropdown(navDropdown)" class="dropbtn">Faculty</button>
-    <div id="navDropdown" class="dropdown-content">
-        <a href="/faculty/1">Sample Faculty</a>
-        <a href="/faculty/2">Technology</a>
-        <a href="/faculty/3">Link 3</a>
-    </div>
-</div>
-<a href="/login">Login</a>
+<ul id="navList">
+    <li>
+        <a href="/">Home</a>
+    </li>
+    <li>
+        <!-- Dropdown code from W3Schools: https://www.w3schools.com/howto/howto_js_dropdown.asp -->
+        <div class="dropdown">
+            <button onclick="toggleDropdown(navDropdown)" class="dropbtn">Faculty</button>
+            <div id="navDropdown" class="dropdown-content">
+                <a href="/faculty/1">Sample Faculty</a>
+                <a href="/faculty/2">Technology</a>
+                <a href="/faculty/3">Link 3</a>
+            </div>
+        </div>
+    </li>
+    <li>
+        <a href="/search">Search</a>
+    </li>
+    <li>
+        <a href="/login">Login</a>
+    </li>
+</ul>
 
 <script src="{{url_for('static', filename='/js/dropdown.js')}}"></script>

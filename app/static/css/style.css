@@ -127,24 +127,31 @@ header {
 nav {
     float: inline-start;
     display: inline;
-    margin-top: 40px;   
-    margin-left: 400px;
+    margin-top: 25px;   
+    margin-left: 300px;
 }
 
-nav > a {
-    float: inline-start;
+#navList {
+    list-style-type: none;
+}
+
+#navList > li {
+    display: inline;
     margin-right: 100px;
+}
+
+#navList > li > a {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 1.5em;
     color: white;
     text-decoration: none;
 }
 
-nav > .dropdown > .dropbtn{
+#navList .dropdown > .dropbtn{
     padding: 0;
 }
 
-nav > .dropdown > .dropdown-content {
+#navList .dropdown > .dropdown-content {
     background-color: #173248;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
