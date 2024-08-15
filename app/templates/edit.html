@@ -5,9 +5,22 @@
     <button type="button">Download</button>
 </a>
 
-<form>
+<!-- <form>
     <input type="file" name="fileUpload">
     <input type="submit">
+</form> -->
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <p>{{message}}</p>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="csv_file" accept=".csv" required>
+    <button type="submit">Upload</button>
 </form>
 
 {% endblock %}
