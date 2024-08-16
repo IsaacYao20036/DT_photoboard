@@ -1,14 +1,25 @@
 {% extends 'layout.html' %}
 {% block content %}
 
+<h2>Download</h2>
+<p>Click on the button to download a CSV file and edit the current staff data.</p>
+
 <a href="/download" download="">
     <button type="button">Download</button>
 </a>
 
-<!-- <form>
-    <input type="file" name="fileUpload">
-    <input type="submit">
-</form> -->
+<br>
+<br>
+
+<h2>Upload</h2>
+<p>After editing a CSV file, upload it to update the website's data.</p>
+<p>WARNING: Make sure that all changes are correct.</p>
+
+
+<form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="csv_file" accept=".csv" required>
+    <button type="submit">Upload</button>
+</form>
 
 {% with messages = get_flashed_messages() %}
     {% if messages %}
@@ -17,10 +28,5 @@
         {% endfor %}
     {% endif %}
 {% endwith %}
-
-<form action="/upload" method="post" enctype="multipart/form-data">
-    <input type="file" name="csv_file" accept=".csv" required>
-    <button type="submit">Upload</button>
-</form>
 
 {% endblock %}

@@ -1,19 +1,29 @@
 {% extends 'layout.html' %}
 {% block content %}
 
-<ul>
-    <li><a href="/login">Login</a></li>
-    <li><a href="/register">Create account</a></li>
-    <li><a href="/logout">Logout</a></li>
-</ul>
+<h1>Login</h1>
+<br>
 
-<h1>Login to your account</h1>
 <form action="#" method="post">
+
     <label for="username">Username:</label>
-    <input type="text" name="username" />
+    <input type="text" name="username" required>
+
+    <br>
+    <br>
+
     <label for="password">Password:</label>
-    <input type="password" name="password" />
-    <button type="submit">Submit</button>
+    <input type="password" name="password" required>
+
+    <br>
+    <br>
+
+    <button type="submit" id="loginBtn">Submit</button>
+
 </form>
+<br>
+
+<p id="registerLink">Or <a href="/register">register here</a></p>
+
 
 {% endblock %}

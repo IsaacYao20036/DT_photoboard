@@ -26,6 +26,7 @@ p {
 
 /* Dropdown Button */
 .dropbtn {
+    width: fit-content;
     background-color: #173248;
     color: white;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -115,7 +116,6 @@ header {
     margin: 35px 0px;
     text-align: left;
     text-decoration: none;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: white;
 }
 
@@ -127,11 +127,12 @@ header {
 nav {
     float: inline-start;
     display: inline;
-    margin-top: 25px;   
     margin-left: 300px;
 }
 
 #navList {
+    margin-top: 30px;
+    margin-bottom: 0;
     list-style-type: none;
 }
 
@@ -176,15 +177,19 @@ img {
     text-align: center;
 }
 
-.backBtn {
-    position: relative;
-    bottom: 50px;
+button {
     height: 50px;
     width: 100px;
     border-style: solid;
     background-color: #b1c1df;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
+.backBtn {
+    position: relative;
+    bottom: 50px;
+}
+
 
 /* **** */
 /* HOME */
@@ -296,14 +301,6 @@ img {
     margin-bottom: 50px;
 }
 
-a button {
-    height: 50px;
-    width: 100px;
-    border-style: solid;
-    background-color: #b1c1df;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
 
 /* ******* */
 /* FACULTY */
@@ -378,4 +375,44 @@ a button {
 ul li {
     font-size: 1.17em;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+/* ***** */
+/* LOGIN */
+/* ***** */
+
+label {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+input[type='text'] {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+/* **** */
+/* EDIT */
+/* **** */
+
+form {
+    margin: auto;
+    width: fit-content;
+}
+
+input[type='file']::file-selector-button {
+    height: 50px;
+    width: 100px;
+    border-style: solid;
+    background-color: #b1c1df;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#loginBtn {
+    display: block;
+    margin: 0 auto;
+}
+#registerLink {
+    margin: auto;
+    width: fit-content;
 }
