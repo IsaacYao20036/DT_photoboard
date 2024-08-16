@@ -4,7 +4,17 @@
 <h1>Login</h1>
 <br>
 
-<form action="#" method="post">
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <p id="logoutMsg">{{message}}</p>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<br>
+
+<form class="loginForm" action="#" method="post">
 
     <label for="username">Username:</label>
     <input type="text" name="username" required>
@@ -18,7 +28,7 @@
     <br>
     <br>
 
-    <button type="submit" id="loginBtn">Submit</button>
+    <button class="loginBtn" type="submit">Submit</button>
 
 </form>
 <br>

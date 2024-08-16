@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<h1>Create an account</h1>
+<br>
+
+<button type="button" onclick="history.back()" class="backBtn">←Back</button>
+
+<form class="loginForm" action="#" method="post">
+
+    <label for="username">Username:</label>
+    <input type="text" name="username">
+
+    <br>
+    <br>
+
+    <label for="password">Password:</label>
+    <input type="password" name="password">
+
+    <br>
+    <br>
+
+    <button class="loginBtn" type="submit">Submit</button>
+
+</form>
+
+{% endblock %}

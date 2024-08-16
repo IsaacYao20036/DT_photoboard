@@ -195,6 +195,13 @@ button {
 /* HOME */
 /* **** */
 
+
+#editMsg {
+    margin: auto;
+    width: fit-content;
+    text-align: center;
+}
+
 #principalDropdown {
     grid-template-columns: min-content;
 }
@@ -378,9 +385,9 @@ ul li {
 }
 
 
-/* ***** */
-/* LOGIN */
-/* ***** */
+/* ****************** */
+/* LOGIN and REGISTER */
+/* ****************** */
 
 label {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -390,15 +397,31 @@ input[type='text'] {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+#logoutMsg {
+    margin: auto;
+    width: fit-content;
+    text-align: center;
+}
+
+.loginForm {
+    margin: auto;
+    width: fit-content;
+}
+
+.loginBtn {
+    display: block;
+    margin: 0 auto;
+}
+
+#registerLink {
+    margin: auto;
+    width: fit-content;
+}
+
 
 /* **** */
 /* EDIT */
 /* **** */
-
-form {
-    margin: auto;
-    width: fit-content;
-}
 
 input[type='file']::file-selector-button {
     height: 50px;
@@ -408,11 +431,3 @@ input[type='file']::file-selector-button {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-#loginBtn {
-    display: block;
-    margin: 0 auto;
-}
-#registerLink {
-    margin: auto;
-    width: fit-content;
-}

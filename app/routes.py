@@ -77,6 +77,55 @@ def search():
                            staffmembers_l=staffmembers_l)
 
 
+@login_manager.user_loader
+def loader_user(user_id):
+    return models.Users.query.get(user_id)
+
+
+@app.route('/register', methods=["GET", "POST"])
+def register():
+    # If the user made a POST request, create a new user
+    if request.method == "POST":
+        user = models.Users(username=request.form.get("username"),
+                            hashed_password=bcrypt.generate_password_hash(request.form.get('password')).decode('utf-8'))
+        # Add the user to the database
+        db.session.add(user)
+        # Commit the changes made
+        db.session.commit()
+        # Once user account created, redirect them
+        # to login route (created later on)
+        return redirect(url_for("login"))
+    # Renders sign_up template if user made a GET request
+    return render_template("register.html")
+
+
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    # If a post request was made, find the user by
+    # filtering for the username
+    if request.method == "POST":
+        user = models.Users.query.filter_by(
+            username=request.form.get("username")).first()
+        # Check if the password entered is the
+        # same as the user's password
+        password = request.form.get("password")
+        if bcrypt.check_password_hash(user.hashed_password, password):
+            # Use the login_user method to log in the user
+            login_user(user)
+            return redirect(url_for("home"))
+        else:
+            return 'you failed'
+        # Redirect the user back to the home
+    return render_template("login.html")
+
+
+@app.route('/logout')
+def logout():
+    logout_user()
+    flash('You have been logged out.')
+    return redirect(url_for('login'))
+
+
 @app.route('/edit')
 def edit():
     return render_template('edit.html')
@@ -145,59 +194,11 @@ def upload():
         # Save the new file, overwriting the existing one
         file.save(file_path)
         flash('CSV file successfully uploaded')
-        load_from_csv("app\photoboard.csv")
+        load_from_csv("app/photoboard.csv")
         flash('Database successfully updated')
         return redirect(url_for('edit'))
     flash('Invalid file type')
     return redirect(url_for('edit'))
-
-
-@login_manager.user_loader
-def loader_user(user_id):
-    return models.Users.query.get(user_id)
-
-
-@app.route('/register', methods=["GET", "POST"])
-def register():
-    # If the user made a POST request, create a new user
-    if request.method == "POST":
-        user = models.Users(username=request.form.get("username"),
-                            hashed_password=bcrypt.generate_password_hash(request.form.get('password')).decode('utf-8'))
-        # Add the user to the database
-        db.session.add(user)
-        # Commit the changes made
-        db.session.commit()
-        # Once user account created, redirect them
-        # to login route (created later on)
-        return redirect(url_for("login"))
-    # Renders sign_up template if user made a GET request
-    return render_template("sign_up.html")
-
-
-@app.route("/login", methods=["GET", "POST"])
-def login():
-    # If a post request was made, find the user by
-    # filtering for the username
-    if request.method == "POST":
-        user = models.Users.query.filter_by(
-            username=request.form.get("username")).first()
-        # Check if the password entered is the
-        # same as the user's password
-        password = request.form.get("password")
-        if bcrypt.check_password_hash(user.hashed_password, password):
-            # Use the login_user method to log in the user
-            login_user(user)
-            return redirect(url_for("home"))
-        else:
-            return 'you failed'
-        # Redirect the user back to the home
-    return render_template("login.html")
-
-
-@app.route('/logout')
-def logout():
-    logout_user()
-    return redirect(url_for('login'))
 
 
 if __name__ == '__main__':
