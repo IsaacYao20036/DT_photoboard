@@ -38,20 +38,28 @@ def home():
 
 @app.route('/faculty/<int:id>')
 def faculty(id):
-    faculty = models.Faculty.query.filter_by(id=id).first()
-    return render_template('faculty.html', faculty=faculty)
+    try:
+        faculty = models.Faculty.query.filter_by(id=id).first_or_404()
+        return render_template('faculty.html', faculty=faculty)
+    except OverflowError:
+        abort(404)
 
 
 @app.route('/department/<int:id>')
 def department(id):
-    department = models.Department.query.filter_by(id=id).first()
-    return render_template('department.html', department=department)
-
+    try:
+        department = models.Department.query.filter_by(id=id).first_or_404()
+        return render_template('department.html', department=department)
+    except OverflowError:
+        abort(404)
 
 @app.route('/profile/<code>')
 def staffmember(code):
-    staffmember = models.StaffMember.query.filter_by(code=code).first()
-    return render_template('profile.html', staffmember=staffmember)
+    try:
+        staffmember = models.StaffMember.query.filter_by(code=code).first_or_404()
+        return render_template('profile.html', staffmember=staffmember)
+    except OverflowError:
+        abort(404)
 
 
 @app.route('/search')
@@ -109,12 +117,14 @@ def login():
         # Check if the password entered is the
         # same as the user's password
         password = request.form.get("password")
-        if bcrypt.check_password_hash(user.hashed_password, password):
+        if user is None:
+            return 'oof username no exist'
+        elif bcrypt.check_password_hash(user.hashed_password, password):
             # Use the login_user method to log in the user
             login_user(user)
             return redirect(url_for("home"))
         else:
-            return 'you failed'
+            return 'haha wrong password'
         # Redirect the user back to the home
     return render_template("login.html")
 
@@ -199,6 +209,12 @@ def upload():
         return redirect(url_for('edit'))
     flash('Invalid file type')
     return redirect(url_for('edit'))
+
+
+# handles 404 error by taking user to 404.html
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
 
 
 if __name__ == '__main__':
