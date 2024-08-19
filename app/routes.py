@@ -117,14 +117,15 @@ def login():
         # Check if the password entered is the
         # same as the user's password
         password = request.form.get("password")
+        error_text = "The username or password entered is incorrect. Please try again."
         if user is None:
-            return 'oof username no exist'
+            flash(error_text)
         elif bcrypt.check_password_hash(user.hashed_password, password):
             # Use the login_user method to log in the user
             login_user(user)
             return redirect(url_for("home"))
         else:
-            return 'haha wrong password'
+            flash(error_text)
         # Redirect the user back to the home
     return render_template("login.html")
 
