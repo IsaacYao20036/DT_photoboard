@@ -6,6 +6,16 @@
 
 <button type="button" onclick="history.back()" class="backBtn">←Back</button>
 
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <p class="msg">{{message}}</p>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<br>
+
 <form class="loginForm" action="#" method="post">
 
     <label for="username">Username:</label>

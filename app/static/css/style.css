@@ -397,7 +397,7 @@ input[type='text'] {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-#logoutMsg {
+.msg {
     margin: auto;
     width: fit-content;
     text-align: center;

@@ -7,7 +7,7 @@
 {% with messages = get_flashed_messages() %}
     {% if messages %}
         {% for message in messages %}
-            <p id="logoutMsg">{{message}}</p>
+            <p class="msg">{{message}}</p>
         {% endfor %}
     {% endif %}
 {% endwith %}
