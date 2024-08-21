@@ -96,7 +96,8 @@ def register():
     if request.method == "POST":
         user = models.Users(username=request.form.get("username"),
                             hashed_password=bcrypt.generate_password_hash(request.form.get('password')).decode('utf-8'))
-        if models.Users.query.filter_by(username=request.form.get("username")) is not None:
+        username_check = models.Users.query.filter_by(username=request.form.get("username")).first()
+        if username_check is not None:
             flash('This username already exists. Please register with a different username.')
         else:
             # Add the user to the database
