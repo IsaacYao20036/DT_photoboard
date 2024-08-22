@@ -1,37 +1,45 @@
 {% extends 'layout.html' %}
 {% block content %}
 
-<h1>Create an account</h1>
-<br>
+{% if current_user.is_authenticated %}
 
-<button type="button" onclick="history.back()" class="backBtn">←Back</button>
-
-{% with messages = get_flashed_messages() %}
-    {% if messages %}
-        {% for message in messages %}
-            <p class="msg">{{message}}</p>
-        {% endfor %}
-    {% endif %}
-{% endwith %}
-
-<br>
-
-<form class="loginForm" action="#" method="post">
-
-    <label for="username">Username:</label>
-    <input type="text" name="username" maxlength="30" required>
-
-    <br>
+    <h1>Create an account</h1>
     <br>
 
-    <label for="password">Password:</label>
-    <input type="password" name="password" maxlength="30" required>
+    <button type="button" onclick="history.back()" class="backBtn">←Back</button>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p class="msg">{{message}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
 
     <br>
-    <br>
 
-    <button class="loginBtn" type="submit">Submit</button>
+    <form class="loginForm" action="#" method="post">
 
-</form>
+        <label for="username">Username:</label>
+        <input type="text" name="username" maxlength="30" required>
+
+        <br>
+        <br>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" maxlength="30" required>
+
+        <br>
+        <br>
+
+        <button class="loginBtn" type="submit">Submit</button>
+
+    </form>
+
+{% else %}
+
+    <h2>You do not have access to this page. You must be logged in for registration access.</h2>
+
+{% endif %}
 
 {% endblock %}

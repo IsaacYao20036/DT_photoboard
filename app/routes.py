@@ -53,6 +53,7 @@ def department(id):
     except OverflowError:
         abort(404)
 
+
 @app.route('/profile/<code>')
 def staffmember(code):
     try:
@@ -221,6 +222,10 @@ def upload():
 def page_not_found(e):
     return render_template('404.html'), 404
 
+# handles 500 error by taking user to 500.html
+@app.errorhandler(500)
+def internal_server_error(e):
+    return render_template('500.html'), 500
 
 if __name__ == '__main__':
     # if not os.path.exists(UPLOAD_FOLDER):
