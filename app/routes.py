@@ -171,7 +171,9 @@ def allowed_file(filename):
 
 
 def load_from_csv(filename):
-    print("Adding...")
+    print("Deleting all data in StaffMember table")
+    models.StaffMember.query.delete()
+    print("Adding new data")
     with open(filename, newline='', encoding='latin-1') as csvfile:
         reader = csv.reader(csvfile)
         for row in reader:
