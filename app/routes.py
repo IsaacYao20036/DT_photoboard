@@ -219,12 +219,19 @@ def upload():
     return redirect(url_for('edit'))
 
 
-# handles 404 error by taking user to 404.html
+# handles 404 error by showing 404.html to user
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'), 404
 
-# handles 500 error by taking user to 500.html
+
+# handles 404 error by showing 405.html to user
+@app.errorhandler(405)
+def method_not_allowed(e):
+    return render_template('405.html'), 405
+
+
+# handles 500 error by showing 500.html to user
 @app.errorhandler(500)
 def internal_server_error(e):
     return render_template('500.html'), 500
