@@ -173,6 +173,7 @@ def allowed_file(filename):
 def load_from_csv(filename):
     print("Deleting all data in StaffMember table")
     models.StaffMember.query.delete()
+    db.session.commit()
     print("Adding new data")
     with open(filename, newline='', encoding='latin-1') as csvfile:
         reader = csv.reader(csvfile)
@@ -225,6 +226,7 @@ def page_not_found(e):
     return render_template('404.html'), 404
 
 
+<<<<<<< HEAD
 # handles 404 error by showing 405.html to user
 @app.errorhandler(405)
 def method_not_allowed(e):
@@ -232,9 +234,13 @@ def method_not_allowed(e):
 
 
 # handles 500 error by showing 500.html to user
+=======
+# handles 500 error by taking user to 500.html
+>>>>>>> a22bc37fbc6dfb6a5ac6398df3dc64108280ad64
 @app.errorhandler(500)
 def internal_server_error(e):
     return render_template('500.html'), 500
+
 
 if __name__ == '__main__':
     # if not os.path.exists(UPLOAD_FOLDER):
