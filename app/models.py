@@ -1,4 +1,4 @@
-from app.routes import db, app
+from app.routes import db
 from flask_login import UserMixin
 
 Staff_Position = db.Table(
