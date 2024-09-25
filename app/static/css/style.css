@@ -167,6 +167,12 @@ nav {
     font-family: 'Public Sans', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+#accountimg {
+    margin-bottom: -15px;
+    width: 50px;
+    border-style: none;
+}
+
 
 /* **** */
 /* MAIN */

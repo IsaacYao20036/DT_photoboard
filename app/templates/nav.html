@@ -5,8 +5,8 @@
     <li>
         <!-- Dropdown code from W3Schools: https://www.w3schools.com/howto/howto_js_dropdown.asp -->
         <div class="dropdown">
-            <button onclick="toggleDropdown(navDropdown)" class="dropbtn">Faculty</button>
-            <div id="navDropdown" class="dropdown-content">
+            <button onclick="toggleDropdown(facultyDropdown)" class="dropbtn">Faculty</button>
+            <div id="facultyDropdown" class="dropdown-content">
                 <a href="/faculty/1">Sample Faculty</a>
                 <a href="/faculty/2">Technology</a>
                 <a href="/faculty/3">Link 3</a>
@@ -18,7 +18,13 @@
     </li>
     <li>
         {% if current_user.is_authenticated %}
-            <a href="/logout">Logout</a>
+            <div class="dropdown">
+                <img id="accountimg" src="/static/img/account.png">
+                <button onclick="toggleDropdown(accountDropdown)" class="dropbtn">{{ current_user.username }}</button>
+                <div id="accountDropdown" class="dropdown-content">
+                    <a href="/logout">Logout</a>
+                </div>
+            </div>
         {% else %}
             <a href="/login">Login</a>
         {% endif %}
