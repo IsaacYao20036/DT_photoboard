@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, login_user, logout_user
 from flask_bcrypt import Bcrypt
 from os import path
-from csv import writer, reader
+import csv
 from io import StringIO
 from shutil import copy
 
@@ -142,7 +142,7 @@ def download():
     staffmembers = models.StaffMember.query.all()
 
     buf = StringIO()
-    w = writer(buf)
+    w = csv.writer(buf)
     for staffmember in staffmembers:
         row = [staffmember.code, staffmember.name, staffmember.fname, staffmember.lname, staffmember.photo, staffmember.division_id, staffmember.email, staffmember.likely_location]
         w.writerow(row)
@@ -200,13 +200,35 @@ def upload():
         file.save(file_path)
         flash('CSV file successfully uploaded')
 
-        # Updates database with CSV
+        # Open and validate the CSV before making database changes
+        valid = True
+        staff_members = []  # Store valid rows before committing
+
+        with open(file_path, newline='', encoding='latin-1') as csvfile:
+            reader = csv.reader(csvfile)
+
+            for row in reader:
+                if len(row) != 8:
+                    valid = False
+                    break
+                # Collect the staff members in memory
+                staff_members.append(row)
+
+        if not valid:
+            # Restore the backup CSV
+            backup_file = 'app/backup.csv'
+            copy(backup_file, file_path)
+            flash('CSV file changes undone')
+            flash('The CSV file you uploaded is malformed.')
+            flash('Please download a new file to make your changes.')
+            return redirect(url_for('edit'))
+
+        # If the CSV is valid, delete old data and insert new data
         models.StaffMember.query.delete()
         db.session.commit()
-        with open('app/photoboard.csv', newline='', encoding='latin-1') as csvfile:
-            reader = reader(csvfile)
-            for row in reader:
-                add_staffmember(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7])
+        for row in staff_members:
+            add_staffmember(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7])
+
         flash('Database successfully updated')
 
         return redirect(url_for('edit'))
