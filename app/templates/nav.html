@@ -22,6 +22,8 @@
                 <img id="accountimg" src="/static/img/account.png">
                 <button onclick="toggleDropdown(accountDropdown)" class="dropbtn">{{ current_user.username }}</button>
                 <div id="accountDropdown" class="dropdown-content">
+                    <a href="/edit">Edit</a>
+                    <a href="/register">Register</a>
                     <a href="/logout">Logout</a>
                 </div>
             </div>
