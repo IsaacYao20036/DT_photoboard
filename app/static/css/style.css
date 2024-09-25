@@ -217,13 +217,12 @@ button {
 }
 
 #allSchoolStaff{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(5, min-content);
     gap: 50px;
     overflow-y: scroll;
-    height: 950px;
-    padding: 10px;
+    height: 600px;
+    padding: 75px;
     background-color: #00ab8e;
 }
 
