@@ -108,14 +108,21 @@ header {
     width: 110%;
     margin-top: -8px;
     margin-left: -8px;
-    padding-left: 100px;
+    padding-left: 50px;
     background-color: #004e42;
+}
+
+#logo {
+    display: inline;
+    float: left;
+    width: 100px;
+    border-style: none;
 }
 
 .headertxt {
     display: inline;
     float: left;
-    margin: 35px 0px;
+    margin: 35px 10px;
     text-align: left;
     text-decoration: none;
     color: white;
@@ -129,7 +136,7 @@ header {
 nav {
     float: inline-start;
     display: inline;
-    margin-left: 300px;
+    margin-left: 100px;
 }
 
 #navList {
@@ -140,7 +147,7 @@ nav {
 
 #navList > li {
     display: inline;
-    margin-right: 100px;
+    margin-right: 75px;
 }
 
 #navList > li > a {
