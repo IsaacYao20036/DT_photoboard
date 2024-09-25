@@ -107,6 +107,8 @@ def register():
             db.session.commit()
             # Once user account created, redirect them
             # to login route (created later on)
+            logout_user()
+            flash('You have been logged out.')
             return redirect(url_for("login"))
     # Renders sign_up template if user made a GET request
     return render_template("register.html")
