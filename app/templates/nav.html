@@ -1,11 +1,14 @@
 <ul id="navList">
+
     <li>
         <a href="/">Home</a>
     </li>
+
     <li>
         <!-- Dropdown code from W3Schools: https://www.w3schools.com/howto/howto_js_dropdown.asp -->
         <div class="dropdown">
             <button onclick="toggleNavDropdown(facultyDropdown)" class="dropbtn">Faculty</button>
+
             <div id="facultyDropdown" class="dropdown-content">
                 <a href="/faculty/2">Technology</a>
                 <a href="/faculty/3">Creative Arts</a>
@@ -16,27 +19,33 @@
                 <a href="/faculty/8">Science</a>
                 <a href="/faculty/9">Social Sciences</a>
                 <a href="/faculty/10">Student Support</a>
-            </div>
-        </div>
+            </div> <!-- facultyDropdown -->
+        </div> <!-- dropdown -->
     </li>
+
     <li>
         <a href="/search">Search</a>
     </li>
+
     <li>
         {% if current_user.is_authenticated %}
+
             <div class="dropdown">
                 <img id="accountimg" src="/static/img/account.png">
                 <button onclick="toggleNavDropdown(accountDropdown)" class="dropbtn">{{ current_user.username }}</button>
+
                 <div id="accountDropdown" class="dropdown-content">
                     <a href="/edit">Edit</a>
                     <a href="/register">Register</a>
                     <a href="/logout">Logout</a>
-                </div>
-            </div>
+                </div> <!-- accountDropdown -->
+            </div> <!-- dropdown -->
+
         {% else %}
             <a href="/login">Login</a>
         {% endif %}
     </li>
+
 </ul>
 
 <script src="{{url_for('static', filename='/js/dropdown.js')}}"></script>

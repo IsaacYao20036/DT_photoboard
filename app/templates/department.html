@@ -13,16 +13,16 @@
 <h2>Staff Members:</h2>
 <br>
 <div id="departmentStaff">
-
     {% for staffmember in department.staffmembers %}
+
         <div class="profileCard">
             <a href="/profile/{{ staffmember.code }}">
                 <img src="/static/img/photos/{{ staffmember.code }}.png" onerror="this.onerror=null;this.src='/static/img/placeholder.jpg';">
                 <p>{{ staffmember }} ({{ staffmember.code }})</p>
             </a>
-        </div>
-    {% endfor %}
-</div>
+        </div> <!-- profileCard -->
 
+    {% endfor %}
+</div> <!-- departmentStaff -->
 
 {% endblock %}

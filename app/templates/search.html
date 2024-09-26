@@ -4,19 +4,22 @@
 {% set div_list = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O", "P","Q","R","S","T","U","V","W","X","Y","Z"] %}
 
 <div class="sidebar">
+
     <div id="alphabetLinks_f">
     {% for i in range(div_list|length) %}
         <a href="#heading{{ div_list[i] }}_f">{{ div_list[i] }} &nbsp;</a>
         <br>
     {% endfor %}
-    </div>
+    </div> <!-- alphabetLinks_f -->
+
     <div id="alphabetLinks_l">
     {% for i in range(div_list|length) %}
         <a href="#heading{{ div_list[i] }}_l">{{ div_list[i] }} &nbsp;</a>
         <br>
     {% endfor %}
-    </div>
-</div>
+    </div> <!-- alphabetLinks_l -->
+
+</div> <!-- sidebar -->
 
 <p>Choose a filter to sort the results alphabetically:</p>
 <select id="filterSelect">
@@ -26,47 +29,54 @@
 
 <br>
 
+<!-- All profile cards ordered by first name -->
 <div id="allCards_f">
-    
     {% for i in range(div_list|length) %}
         <h2 id="heading{{ div_list[i] }}_f" class="alphabetHeading">{{ div_list[i] }}</h2>
+
         <div class="alphabetDiv">
             
             {% for staffmember in staffmembers_f %}
                 
                 {% if staffmember.fname[0] == div_list[i] %}
+
                     <div class="profileCard">
                         <a href="/profile/{{ staffmember.code }}">
                             <img src="/static/img/photos/{{ staffmember.code }}.png" onerror="this.onerror=null;this.src='/static/img/placeholder.jpg';">
                             <p>{{ staffmember }} ({{ staffmember.code }})</p>
                         </a>
-                    </div>
+                    </div> <!-- profileCard -->
+
                 {% endif %}
             {% endfor %}
-        </div>
+        </div> <!-- alphabetDiv -->
     {% endfor %}
 
-</div>
+</div> <!-- allCards_f -->
 
+<!-- All profile cards orderd by last name -->
 <div id="allCards_l">
     {% for i in range(div_list|length) %}
         <h2 id="heading{{ div_list[i] }}_l" class="alphabetHeading">{{ div_list[i] }}</h2>
+
         <div class="alphabetDiv">
             
             {% for staffmember in staffmembers_l %}
                 
                 {% if staffmember.lname[0] == div_list[i] %}
+
                     <div class="profileCard">
                         <a href="/profile/{{ staffmember.code }}">
                             <img src="/static/img/photos/{{ staffmember.code }}.png" onerror="this.onerror=null;this.src='/static/img/placeholder.jpg';">
                             <p>{{ staffmember }} ({{ staffmember.code }})</p>
                         </a>
-                    </div>
+                    </div> <!-- profileCard -->
+
                 {% endif %}
             {% endfor %}
-        </div>
+        </div> <!-- alphabetDiv-->
     {% endfor %}
-</div>
+</div> <!-- allCards_l -->
 
 <a href="#" id="backToTopBtn">
     <button type="button">Back to top ↑</button>

@@ -19,7 +19,9 @@
             <h1>{{ department }}</h1>
         </a>
     {% endfor %}
-</div>
+
+</div> <!-- departmentsDiv -->
+
 <br>
 <br>
 
@@ -32,18 +34,20 @@
 
             {% if staffmember in duplicate_check %}
             {% else %}
+
                 <div class="profileCard">
                     <a href="/profile/{{ staffmember.code }}">
                         <img src="/static/img/photos/{{ staffmember.code }}.png" onerror="this.onerror=null;this.src='/static/img/placeholder.jpg';">
                         <p>{{ staffmember }} ({{ staffmember.code }})</p>
                     </a>
-                </div>
+                </div> <!-- profileCard -->
+
             {% endif %}
             {% if duplicate_check.append(staffmember) %}
             {% endif %}
         {% endfor %}
     {% endfor %}
-</div>
+</div> <!-- facultyStaff -->
 
 
 {% endblock %}

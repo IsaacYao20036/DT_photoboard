@@ -20,13 +20,14 @@
         <p class="profileText">Faculty:</p>
         <ul>
             {% for department in staffmember.departments %}
-                    {% if duplicate_check[0] != department.faculty %}
-                        <li>
-                            {{ department.faculty }}
-                        </li>
-                    {% endif %}
-                    {% if duplicate_check.append(department.faculty) %}
-                    {% endif %}
+                {% if staffmember in duplicate_check %}
+                {% else %}
+                    <li>
+                        {{ department.faculty }}
+                    </li>
+                {% endif %}
+                {% if duplicate_check.append(department.faculty) %}
+                {% endif %}
             {% endfor %}
         </ul>
         
@@ -43,9 +44,7 @@
                 <li>{{ position }}</li>
             {% endfor %}
         </ul>
-    </div>
+    </div> <!-- profileDetails -->
 </div>
-
-
 
 {% endblock %}
