@@ -86,9 +86,9 @@ class Department(db.Model):
 
 
 # User table in db for login authentication
-# Code from https://www.geeksforgeeks.org/how-to-add-authentication-to-your-app-with-flask-login/
+# Code from
+# https://www.geeksforgeeks.org/how-to-add-authentication-to-your-app-with-flask-login/
 
-# Create user model
 class Users(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(), unique=True,
