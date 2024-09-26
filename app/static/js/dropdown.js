@@ -8,9 +8,6 @@ function toggleDropdown(dropdownID) {
     if (dropdownID == facultyDropdown) {
         document.getElementById("facultyDropdown").classList.toggle("show-block")
     }
-    else if (dropdownID == accountDropdown) {
-        document.getElementById("accountDropdown").classList.toggle("show-block")
-    }
     else if (dropdownID == principalDropdown) {
         document.getElementById("principalDropdown").classList.toggle("show")
     }
@@ -22,6 +19,10 @@ function toggleDropdown(dropdownID) {
     }
     else if (dropdownID == counsellorsDropdown) {
         document.getElementById("counsellorsDropdown").classList.toggle("show")
+    }
+    
+    if (dropdownID == accountDropdown) {
+        document.getElementById("accountDropdown").classList.toggle("show-block")
     }
 
 }
