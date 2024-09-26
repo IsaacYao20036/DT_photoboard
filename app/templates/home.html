@@ -20,7 +20,7 @@
                 {% if position.group == "Principal" %}
                     <div class="profileCard">
                         <a href="/profile/{{ staffmember.code }}">
-                            <img src="{{ staffmember.photo }}">
+                            <img src="/static/img/photos/{{ staffmember.code }}.png" onerror="this.onerror=null;this.src='/static/img/placeholder.jpg';">
                             <p>{{ staffmember }} ({{ staffmember.code }})</p>
                             <p>{{ position }}</p>
                         </a>
@@ -42,7 +42,7 @@
                 {% if position.group == "Leadership Team" %}
                     <div class="profileCard">
                         <a href="/profile/{{ staffmember.code }}">
-                            <img src="{{ staffmember.photo }}">
+                            <img src="/static/img/photos/{{ staffmember.code }}.png" onerror="this.onerror=null;this.src='/static/img/placeholder.jpg';">
                             <p>{{ staffmember }} ({{ staffmember.code }})</p>
                             <p>{{ position }}</p>
                         </a>
@@ -64,7 +64,7 @@
                 {% if position.group == "Deans" %}
                     <div class="profileCard">
                         <a href="/profile/{{ staffmember.code }}">
-                            <img src="{{ staffmember.photo }}">
+                            <img src="/static/img/photos/{{ staffmember.code }}.png" onerror="this.onerror=null;this.src='/static/img/placeholder.jpg';">
                             <p>{{ staffmember }} ({{ staffmember.code }})</p>
                             <p>{{ position }}</p>
                         </a>
@@ -86,7 +86,7 @@
                 {% if position.group == "Counsellors" %}
                     <div class="profileCard">
                         <a href="/profile/{{ staffmember.code }}">
-                            <img src="{{ staffmember.photo }}">
+                            <img src="/static/img/photos/{{ staffmember.code }}.png" onerror="this.onerror=null;this.src='/static/img/placeholder.jpg';">
                             <p>{{ staffmember }} ({{ staffmember.code }})</p>
                             <p>{{ position }}</p>
                         </a>
@@ -106,7 +106,7 @@
     {% for staffmember in staffmembers %}
         <div class="profileCard">
             <a href="/profile/{{ staffmember.code }}">
-                <img src="{{ staffmember.photo }}">
+                <img src="/static/img/photos/{{ staffmember.code }}.png" onerror="this.onerror=null;this.src='/static/img/placeholder.jpg';">
                 <p>{{ staffmember }} ({{ staffmember.code }})</p>
             </a>
         </div>
