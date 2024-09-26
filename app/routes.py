@@ -208,7 +208,6 @@ def upload():
                 # Check if it has the correct number of rows
                 if len(row) != 7:
                     valid = False
-                    print('len')
                     break
                 # Check if code is valid and unique
                 elif row[0].isalpha() is False or len(row[0]) != 3 or row[0] in unique_check:
@@ -217,12 +216,10 @@ def upload():
                 # Check if division is valid
                 elif row[4] not in ['', '1', '2', '3', '4']:
                     valid = False
-                    print('division')
                     break
                 # Check if email has @ symbol (if it is valid)
                 elif '@' not in row[5]:
                     valid = False
-                    print('email')
                     break
                 else:
                     unique_check.append(row[0])
