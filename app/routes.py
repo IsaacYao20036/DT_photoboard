@@ -208,9 +208,27 @@ def upload():
             reader = csv.reader(csvfile)
 
             for row in reader:
+                row[0] = row[0].upper()
+                unique_check = []
+                unique_check.append(row[0])
+                # Check if it has correct number of rows
                 if len(row) != 8:
                     valid = False
                     break
+                # Check if code is valid and unique
+                elif row[0].isalpha() is False or len(row[0]) != 3 or row[0] in unique_check:
+                    valid = False
+                    break
+                # Check if division is correct
+                elif row[5] not in ['', '1', '2', '3', '4']:
+                    valid = False
+                    break
+                # Check if email has @ symbol
+                elif '@' not in row[6]:
+                    valid = False
+                    break
+                else:
+                    pass
                 # Collect the staff members in memory
                 staff_members.append(row)
 
