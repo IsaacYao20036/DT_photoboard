@@ -46,7 +46,7 @@ p {
     display: inline-block;
 }
 
-/* Dropdown Content (Hidden by Default) */
+/* Dropdown Content */
 .dropdown-content {
     display: none;
     position: absolute;
@@ -62,8 +62,7 @@ p {
     display: block;
 }
 
-
-/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+/* Show the dropdown menu in home page (toggled with JS) */
 .show {
     display: grid;
     position: relative;
@@ -72,6 +71,7 @@ p {
     padding: 10px;
 }
 
+/* Show the dropdown menu in nav bar */
 .show-block {
     display: block;
 }
@@ -81,7 +81,6 @@ p {
 /* PROFILE CARDS */
 /* ************* */
 
-/* Profile card styling */
 .profileCard {
     width: fit-content;
     border: 1px solid black;
@@ -186,7 +185,6 @@ main {
     padding-top: 140px;
 }
 
-/* Image styling */
 img {
     width: 200px;
     border: 5px solid black;
@@ -214,7 +212,6 @@ button {
 /* **** */
 /* HOME */
 /* **** */
-
 
 #editMsg {
     margin: auto;
@@ -252,10 +249,12 @@ button {
     background-color: #00ab8e;
 }
 
+/* All profile cards ordered by first name (display toggled by filterSelect using JS) */
 #allCards_f {
     display: block;
 }
 
+/* All profile cards ordered by last name */
 #allCards_l {
     display: none;
 }
@@ -272,10 +271,12 @@ button {
     gap: 50px;
 }
 
+/* Sidebar alphabet links for first name ordered (displays toggled by filterSelect using JS) */
 #alphabetLinks_f {
     display: block;
 }
 
+/* Sidebar alphabet links for last name ordered */
 #alphabetLinks_l {
     display: none;
 }
@@ -302,10 +303,6 @@ button {
     font-size: 25px;
     color: black;
     display: block;
-}
-  
-.main {
-    margin-left: 200px; /* Same as the width of the sidenav */
 }
   
 @media screen and (max-height: 450px) {
@@ -446,4 +443,3 @@ input[type='file']::file-selector-button {
     background-color: #00ab8e;
     font-family: 'Public Sans', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-
