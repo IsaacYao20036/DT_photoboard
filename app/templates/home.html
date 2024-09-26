@@ -13,7 +13,7 @@
 
 <!-- Dropdown code from W3Schools: https://www.w3schools.com/howto/howto_js_dropdown.asp -->
 <div class="dropdown">
-    <button onclick="toggleDropdown(principalDropdown)" class="dropbtn">Principal</button>
+    <button onclick="toggleHomeDropdown(principalDropdown)" class="dropbtn">Principal</button>
     <div id="principalDropdown" class="dropdown-content">
 		{% for staffmember in staffmembers %}
             {% for position in staffmember.positions %}
@@ -35,7 +35,7 @@
 <br>
 
 <div class="dropdown">
-    <button onclick="toggleDropdown(leadershipTeamDropdown)" class="dropbtn">Leadership Team</button>
+    <button onclick="toggleHomeDropdown(leadershipTeamDropdown)" class="dropbtn">Leadership Team</button>
     <div id="leadershipTeamDropdown" class="dropdown-content">
 		{% for staffmember in staffmembers %}
             {% for position in staffmember.positions %}
@@ -57,7 +57,7 @@
 <br>
 
 <div class="dropdown">
-    <button onclick="toggleDropdown(deansDropdown)" class="dropbtn">Deans</button>
+    <button onclick="toggleHomeDropdown(deansDropdown)" class="dropbtn">Deans</button>
     <div id="deansDropdown" class="dropdown-content">
 		{% for staffmember in staffmembers %}
             {% for position in staffmember.positions %}
@@ -79,7 +79,7 @@
 <br>
 
 <div class="dropdown">
-    <button onclick="toggleDropdown(counsellorsDropdown)" class="dropbtn">Counsellors</button>
+    <button onclick="toggleHomeDropdown(counsellorsDropdown)" class="dropbtn">Counsellors</button>
     <div id="counsellorsDropdown" class="dropdown-content">
 		{% for staffmember in staffmembers %}
             {% for position in staffmember.positions %}

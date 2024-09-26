@@ -1,16 +1,9 @@
 // Code from W3Schools: https://www.w3schools.com/howto/howto_js_dropdown.asp
 
 
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-function toggleDropdown(dropdownID) {
-    
-    if (dropdownID == facultyDropdown) {
-        document.getElementById("facultyDropdown").classList.toggle("show-block")
-    }
-    if (dropdownID == accountDropdown) {
-        document.getElementById("accountDropdown").classList.toggle("show-block")
-    }
+// Show and hide home dropdowns
+function toggleHomeDropdown(dropdownID) {
+
     if (dropdownID == principalDropdown) {
         document.getElementById("principalDropdown").classList.toggle("show")
     }
@@ -25,6 +18,20 @@ function toggleDropdown(dropdownID) {
     }
 
 }
+
+
+// Show and hide nav dropdowns
+function toggleNavDropdown(dropdownID) {
+
+    if (dropdownID == facultyDropdown) {
+        document.getElementById("facultyDropdown").classList.toggle("show-block")
+    }
+    if (dropdownID == accountDropdown) {
+        document.getElementById("accountDropdown").classList.toggle("show-block")
+    }
+
+}
+
 
 // Close the dropdown menu if the user clicks outside of it
 window.onclick = function(event) {
