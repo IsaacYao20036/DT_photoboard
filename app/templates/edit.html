@@ -21,7 +21,7 @@
     <p>After editing a CSV file, upload it to update the website's data.</p>
     <p>WARNING: Make sure that all changes are correct.</p>
 
-    <form action="/upload" method="post" enctype="multipart/form-data" onsubmit="return confirm('Are you sure you want to submit this CSV file?\nWARNING: This is irreversible!');">
+    <form action="/upload" method="post" enctype="multipart/form-data" onsubmit="return confirm('Are you sure you want to submit this CSV file?\nWARNING: This is irreversible!\n(There is a back up but this would require an expert to sort out any problems.)');">
         <input type="file" name="csv_file" accept=".csv" required>
         <button type="submit">Upload</button>
     </form>
