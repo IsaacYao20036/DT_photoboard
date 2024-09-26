@@ -20,7 +20,6 @@ class StaffMember(db.Model):
     name = db.Column(db.Text())
     fname = db.Column(db.Text())
     lname = db.Column(db.Text())
-    photo = db.Column(db.Text())
     division_id = db.Column(db.Integer, db.ForeignKey('Division.id'))
     email = db.Column(db.Text())
     likely_location = db.Column(db.Text())

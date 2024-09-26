@@ -9,7 +9,7 @@
 <button type="button" onclick="history.back()" class="backBtn">←Back</button>
 
 <div>
-    <img src="{{ staffmember.photo }}" id="profileimg">
+    <img id="profileimg" src="/static/img/photos/{{ staffmember.code }}.png" onerror="this.onerror=null;this.src='/static/img/placeholder.jpg';">
 
     <div id="profileDetails">
         <p class="profileText">Code: {{ staffmember.code }}</p>

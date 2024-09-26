@@ -93,6 +93,10 @@ p {
     color: black;
 }
 
+.profileCard img {
+    height: 200px;
+}
+
 .profileCard p {
     padding-left: 5px;
 }
@@ -377,6 +381,7 @@ button {
     margin-right: auto;
     display: inline-block;
     margin-left: 50px;
+    height: 400px;
     width: 400px;
 }
 

@@ -30,10 +30,11 @@
 
         {% for staffmember in department.staffmembers %}
 
-            {% if duplicate_check[-1] != staffmember %}
+            {% if staffmember in duplicate_check %}
+            {% else %}
                 <div class="profileCard">
                     <a href="/profile/{{ staffmember.code }}">
-                        <img src="{{ staffmember.photo }}">
+                        <img src="/static/img/photos/{{ staffmember.code }}.png" onerror="this.onerror=null;this.src='/static/img/placeholder.jpg';">
                         <p>{{ staffmember }} ({{ staffmember.code }})</p>
                     </a>
                 </div>

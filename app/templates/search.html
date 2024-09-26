@@ -37,7 +37,7 @@
                 {% if staffmember.fname[0] == div_list[i] %}
                     <div class="profileCard">
                         <a href="/profile/{{ staffmember.code }}">
-                            <img src="{{ staffmember.photo }}">
+                            <img src="/static/img/photos/{{ staffmember.code }}.png" onerror="this.onerror=null;this.src='/static/img/placeholder.jpg';">
                             <p>{{ staffmember }} ({{ staffmember.code }})</p>
                         </a>
                     </div>
@@ -58,7 +58,7 @@
                 {% if staffmember.lname[0] == div_list[i] %}
                     <div class="profileCard">
                         <a href="/profile/{{ staffmember.code }}">
-                            <img src="{{ staffmember.photo }}">
+                            <img src="/static/img/photos/{{ staffmember.code }}.png" onerror="this.onerror=null;this.src='/static/img/placeholder.jpg';">
                             <p>{{ staffmember }} ({{ staffmember.code }})</p>
                         </a>
                     </div>

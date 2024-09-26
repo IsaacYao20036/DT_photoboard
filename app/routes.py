@@ -136,15 +136,12 @@ def edit():
 
 @app.route("/download")
 def download():
-    """Exports all the parts as a csv file"""
-    # TODO: This should only be admin
-    # TODO: Export all fields
     staffmembers = models.StaffMember.query.all()
 
     buf = StringIO()
     w = csv.writer(buf)
     for staffmember in staffmembers:
-        row = [staffmember.code, staffmember.name, staffmember.fname, staffmember.lname, staffmember.photo, staffmember.division_id, staffmember.email, staffmember.likely_location]
+        row = [staffmember.code, staffmember.name, staffmember.fname, staffmember.lname, staffmember.division_id, staffmember.email, staffmember.likely_location]
         w.writerow(row)
     response = make_response(buf.getvalue())
     response.headers.set('Content-Type', 'text/csv')
@@ -156,14 +153,13 @@ def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
-def add_staffmember(code, name, fname, lname, photo, division_id, email, likely_location):
+def add_staffmember(code, name, fname, lname, division_id, email, likely_location):
     new_staffmember = models.StaffMember()
 
     new_staffmember.code = code
     new_staffmember.name = name
     new_staffmember.fname = fname
     new_staffmember.lname = lname
-    new_staffmember.photo = photo
     new_staffmember.division_id = division_id
     new_staffmember.email = email
     new_staffmember.likely_location = likely_location
@@ -207,28 +203,29 @@ def upload():
         with open(file_path, newline='', encoding='latin-1') as csvfile:
             reader = csv.reader(csvfile)
 
+            unique_check = []
             for row in reader:
-                row[0] = row[0].upper()
-                unique_check = []
-                unique_check.append(row[0])
                 # Check if it has correct number of rows
-                if len(row) != 8:
+                if len(row) != 7:
                     valid = False
+                    print('len')
                     break
                 # Check if code is valid and unique
                 elif row[0].isalpha() is False or len(row[0]) != 3 or row[0] in unique_check:
                     valid = False
                     break
                 # Check if division is correct
-                elif row[5] not in ['', '1', '2', '3', '4']:
+                elif row[4] not in ['', '1', '2', '3', '4']:
                     valid = False
+                    print('division')
                     break
                 # Check if email has @ symbol
-                elif '@' not in row[6]:
+                elif '@' not in row[5]:
                     valid = False
+                    print('email')
                     break
                 else:
-                    pass
+                    unique_check.append(row[0])
                 # Collect the staff members in memory
                 staff_members.append(row)
 
@@ -245,7 +242,7 @@ def upload():
         models.StaffMember.query.delete()
         db.session.commit()
         for row in staff_members:
-            add_staffmember(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7])
+            add_staffmember(row[0].upper(), row[1], row[2], row[3], row[4], row[5], row[6])
 
         flash('Database successfully updated')
 
