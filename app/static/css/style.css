@@ -238,6 +238,10 @@ button {
 /* SEARCH */
 /* ****** */
 
+#searchContent {
+    margin-left: 200px;
+}
+
 #filterSelect {
     background-color: #004e42;
     color: white;
@@ -287,8 +291,9 @@ button {
     height: 90%;
     width: 100px;
     position: fixed;
-    right: 0;
-    bottom: 0;
+    left: 0;
+    top: 0;
+    margin-top: 100px;
     background-color: #00ab8e;
     color: black;
     font-family: 'Public Sans', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -297,17 +302,12 @@ button {
 }
   
 .sidebar a {
-    margin-top: 30px;
-    margin-left: 30px;
+    margin-top: 20px;
+    margin-left: 40px;
     text-decoration: none;
     font-size: 25px;
     color: black;
     display: block;
-}
-  
-@media screen and (max-height: 450px) {
-    .sidebar {padding-top: 15px;}
-    .sidebar a {font-size: 18px;}
 }
 
 /* Back to Top button styling */
