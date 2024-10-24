@@ -7,7 +7,7 @@
     <li>
         <!-- Dropdown code from W3Schools: https://www.w3schools.com/howto/howto_js_dropdown.asp -->
         <div class="dropdown">
-            <button onclick="toggleNavDropdown(facultyDropdown)" class="dropbtn">Faculty</button>
+            <button onclick="toggleDropdown(facultyDropdown)" class="dropbtn">Faculty</button>
 
             <div id="facultyDropdown" class="dropdown-content">
                 <a href="/faculty/2">Technology</a>
@@ -32,7 +32,7 @@
 
             <div class="dropdown">
                 <img id="accountimg" src="/static/img/account.png">
-                <button onclick="toggleNavDropdown(accountDropdown)" class="dropbtn">{{ current_user.username }}</button>
+                <button onclick="toggleDropdown(accountDropdown)" class="dropbtn">{{ current_user.username }}</button>
 
                 <div id="accountDropdown" class="dropdown-content">
                     <a href="/edit">Edit</a>
@@ -47,5 +47,3 @@
     </li>
 
 </ul>
-
-<script src="{{url_for('static', filename='/js/dropdown.js')}}"></script>
