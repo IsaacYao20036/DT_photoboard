@@ -1,0 +1,18 @@
+bcrypt==4.2.0
+blinker==1.8.2
+build==1.2.2.post1
+BuilT==0.0.3
+click==8.1.7
+Flask==3.0.3
+Flask-Bcrypt==1.0.1
+Flask-Login==0.6.3
+Flask-SQLAlchemy==3.1.1
+itsdangerous==2.2.0
+Jinja2==3.1.4
+MarkupSafe==3.0.2
+packaging==24.1
+photoboard @ file:///Users/isaacyao/test_venv/photoboard-1.0.0-py2.py3-none-any.whl#sha256=1eb71234a9350f014e9c80f74f8c0efe984df2791ec48184f52d3152f2e296d9
+pyproject_hooks==1.2.0
+SQLAlchemy==2.0.36
+typing_extensions==4.12.2
+Werkzeug==3.0.4
